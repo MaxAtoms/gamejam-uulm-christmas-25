@@ -5,12 +5,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 @export var day_length := 20.0
-@export var night_color := Color(0.05, 0.05, 0.35, 0.55)
+
+@export var night_color := Color(0.05, 0.05, 0.4, 0.5)
 var curve_strength := 2.0 # higher = more square
 @onready var night_color_rect = $CanvasLayer/ColorRect
 @onready var time_label = $CanvasLayer2/Control/MarginContainer/HBoxContainer/Label
 
-var time := 0.0
+var time := day_length / 2
 var is_night := false
 
 @export var max_player = 4
@@ -18,9 +19,11 @@ var players = {}
 
 func _process(delta):
 	
-	
-	
+	var enemies_present: bool = get_node("Spawner").get_child_count() > 0
+				
 	time += delta
+	if time > day_length:
+		time -= day_length
 	var cycle := (time / day_length) * TAU
 
 	# Modified to have more equal day/night duration
@@ -37,8 +40,11 @@ func _process(delta):
 	# Day / night state
 	is_night = night_strength > 0.5
 	
+	if time > day_length / 4 and time < day_length / 2 and enemies_present:
+		time = day_length / 4
+	
 	if time_label != null:
-		time_label.text = "Current Time: " + ("Night" if is_night else "Day")
+		time_label.text = "Current Time: " + ("Night" if is_night else "Day") + "  " + str(time)
 	
 func _input(event: InputEvent) -> void:
 	var deviceId = event.device
