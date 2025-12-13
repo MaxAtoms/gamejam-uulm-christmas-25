@@ -61,7 +61,6 @@ script = ExtResource("1_o3s7f")
 sprite_frames = SubResource("SpriteFrames_hy4hk")
 animation = &"go_right"
 frame_progress = 0.64845943
-offset = Vector2(64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

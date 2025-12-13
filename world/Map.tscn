@@ -1312,7 +1312,6 @@ tile_map_data = PackedByteArray("AAACAAIAAwABAAoAAAACAAMAAwABAAoAAAACAAQAAwABAAo
 tile_set = SubResource("TileSet_cgnyc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(64, 64)
 anchor_mode = 0
 limit_right = 20000000
 
