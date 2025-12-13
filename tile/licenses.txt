@@ -3,3 +3,12 @@ tilesets-1: https://opengameart.org/content/16x16-game-assets
 
 tileset-2: https://opengameart.org/content/overworld-grass-biome
     license: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+goblin: https://opengameart.org/content/lpc-goblin
+    license: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+
+zombie and skeleton: https://opengameart.org/content/zombie-and-skeleton-32x48
+    license: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+panguin: https://opengameart.org/content/tux-kyrodian-legends-style
+    license: CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
