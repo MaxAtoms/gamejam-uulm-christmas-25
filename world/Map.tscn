@@ -3,6 +3,7 @@
 
 
 [ext_resource type="Texture2D" uid="uid://ckjrmg6slcs84" path="res://tile/environment/decoration/dirt.png" id="1_daoqi"]
+[ext_resource type="Script" uid="uid://40go1natg6e3" path="res://world/map.gd" id="1_xawsu"]
 [ext_resource type="Texture2D" uid="uid://d0urtf6n6613p" path="res://tile/tilesets/1.png" id="2_1ufxb"]
 [ext_resource type="Texture2D" uid="uid://dt3808kl66v1k" path="res://tile/tilesets/7.png" id="2_sjugl"]
 [ext_resource type="PackedScene" uid="uid://bnu33fspyr4kb" path="res://entity/player/Player.tscn" id="2_xawsu"]
@@ -1047,6 +1048,7 @@ sources/12 = SubResource("TileSetAtlasSource_bo7up")
 sources/13 = SubResource("TileSetAtlasSource_knb4e")
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_xawsu")
 
 [node name="ObjectLayer" type="TileMapLayer" parent="."]
 z_index = 3
@@ -1083,3 +1085,5 @@ position = Vector2(1388, 576)
 
 [node name="Mine2" parent="." instance=ExtResource("6_4fpfk")]
 position = Vector2(858, 918)
+[node name="Player2" parent="." instance=ExtResource("2_xawsu")]
+player_id = 2
