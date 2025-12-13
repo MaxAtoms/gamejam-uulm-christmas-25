@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://gijongf86j0f"]
 
-[ext_resource type="PackedScene" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="1_o5sfe"]
+[ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="1_o5sfe"]
 [ext_resource type="Texture2D" uid="uid://bw2r31flwi38m" path="res://tile/damagable/buildable/defence/ArcherTower2.png" id="2_o5sfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5sfe"]
@@ -11,6 +11,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="ProjectileShooter" parent="." instance=ExtResource("1_o5sfe")]
+damage = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_o5sfe")
