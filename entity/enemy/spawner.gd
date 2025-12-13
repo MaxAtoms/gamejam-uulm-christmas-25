@@ -7,7 +7,6 @@ extends Node2D
 @export var rounds = 3
 
 @export var enemy_scene = preload("res://entity/enemy/Goblin.tscn")
-@onready var spawn_timer = $SpawnTimer
 
 var current_round = 0
 var enemies = []
