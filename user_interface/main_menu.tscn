@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 
 func on_start_pressed():
-	# TODO: insert going to game screen here
+	get_tree().change_scene_to_file(\"res://world/Map.tscn\")
 	pass
 
 func on_quit_pressed():

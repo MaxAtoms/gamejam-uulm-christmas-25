@@ -1,5 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlnd4d33csi8a"]
 
+
 [ext_resource type="Texture2D" uid="uid://clw3xdd481dum" path="res://tile/environment/obstacle/tree.png" id="1_l6btp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6btp"]
