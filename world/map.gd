@@ -17,6 +17,9 @@ var is_night := false
 var players = {}
 
 func _process(delta):
+	
+	
+	
 	time += delta
 	var cycle := (time / day_length) * TAU
 
