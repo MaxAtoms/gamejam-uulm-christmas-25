@@ -29,6 +29,7 @@ project/assembly_name="co-op-defend"
 [global_group]
 
 target=""
+enemy=""
 
 [input]
 
