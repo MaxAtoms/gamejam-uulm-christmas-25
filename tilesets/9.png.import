@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clw3xdd481dum"
-path="res://.godot/imported/tree.png-08589e9f38adb7cb647c759998304dbc.ctex"
+uid="uid://bw78c85ifky0m"
+path="res://.godot/imported/9.png-4c5d60680656e76a76cc104ea8ff4bad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/environment/obstacle/tree.png"
-dest_files=["res://.godot/imported/tree.png-08589e9f38adb7cb647c759998304dbc.ctex"]
+source_file="res://tilesets/9.png"
+dest_files=["res://.godot/imported/9.png-4c5d60680656e76a76cc104ea8ff4bad.ctex"]
 
 [params]
 

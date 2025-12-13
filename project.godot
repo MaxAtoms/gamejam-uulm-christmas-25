@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="co-op-defend"
-run/main_scene="uid://b1p5bf3yvjm4s"
+run/main_scene="uid://bfxoimt6hsr3t"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -27,5 +28,6 @@ project/assembly_name="co-op-defend"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

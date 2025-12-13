@@ -1,3 +1,3 @@
 [gd_scene format=3 uid="uid://ck8ktodx8ida7"]
 
-[node name="SpikeTower" type="Node2D"]
+[node name="SwordWall" type="Node2D"]

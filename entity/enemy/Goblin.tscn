@@ -1,3 +1,17 @@
-[gd_scene load_steps=0 format=3 uid="uid://dlnd4d33csi8a"]
+[gd_scene load_steps=3 format=3 uid="uid://dlnd4d33csi8a"]
 
-[node name="Slime" type="Node2D"]
+
+[ext_resource type="Texture2D" uid="uid://clw3xdd481dum" path="res://tile/environment/obstacle/tree.png" id="1_l6btp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6btp"]
+
+[node name="Goblin" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l6btp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l6btp")
