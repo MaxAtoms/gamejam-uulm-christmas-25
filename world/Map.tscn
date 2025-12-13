@@ -1,20 +1,21 @@
-[gd_scene load_steps=27 format=4 uid="uid://b1p5bf3yvjm4s"]
+[gd_scene load_steps=29 format=4 uid="uid://b1p5bf3yvjm4s"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrmg6slcs84" path="res://tile/environment/decoration/dirt.png" id="1_daoqi"]
-[ext_resource type="Script" path="res://world/map.gd" id="1_xawsu"]
+[ext_resource type="Script" uid="uid://40go1natg6e3" path="res://world/map.gd" id="1_xawsu"]
 [ext_resource type="Texture2D" uid="uid://d0urtf6n6613p" path="res://tile/tilesets/1.png" id="2_1ufxb"]
 [ext_resource type="Texture2D" uid="uid://dt3808kl66v1k" path="res://tile/tilesets/7.png" id="2_sjugl"]
 [ext_resource type="Texture2D" uid="uid://ch2sk4i2o6fpu" path="res://tile/tilesets/3.png" id="3_1ufxb"]
 [ext_resource type="Texture2D" uid="uid://s6ylbfmn6vek" path="res://tile/tilesets/8.png" id="3_isk1n"]
 [ext_resource type="PackedScene" uid="uid://c52gf5sa2l24g" path="res://entity/enemy/Spawner.tscn" id="3_xawsu"]
-[ext_resource type="PackedScene" path="res://entity/enemy/Spawner.tscn" id="3_xawsu"]
 [ext_resource type="Texture2D" uid="uid://bcwihtokfwll" path="res://tile/tilesets/9.png" id="4_rdksb"]
 [ext_resource type="Texture2D" uid="uid://br5u7tl0t2kye" path="res://tile/tilesets/10.png" id="5_dpooj"]
 [ext_resource type="PackedScene" uid="uid://cscbf5pwdpxr2" path="res://tile/damagable/target/source/Mine.tscn" id="6_4fpfk"]
+[ext_resource type="PackedScene" uid="uid://1cingx2pkefw" path="res://tile/damagable/buildable/defence/ArcherTower.tscn" id="6_da0r4"]
 [ext_resource type="Texture2D" uid="uid://blxg71wqm8f2i" path="res://tile/tilesets/2.png" id="8_av5gf"]
 [ext_resource type="Texture2D" uid="uid://53rrn67ywqyv" path="res://tile/tilesets/4.png" id="9_7a3st"]
 [ext_resource type="Texture2D" uid="uid://b7txhflm72mwh" path="res://tile/tilesets/5.png" id="10_gpvnj"]
 [ext_resource type="Texture2D" uid="uid://3tphopms6mx1" path="res://tile/tilesets/6.png" id="11_xmor4"]
+[ext_resource type="PackedScene" uid="uid://cyv4g8ts6rb7y" path="res://tile/damagable/buildable/defence/Canon.tscn" id="17_7a3st"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfat1"]
 texture = ExtResource("1_daoqi")
@@ -1078,7 +1079,6 @@ position = Vector2(1388, 576)
 
 [node name="Mine2" parent="." instance=ExtResource("6_4fpfk")]
 position = Vector2(858, 918)
-
 
 [node name="ArcherTower" parent="." instance=ExtResource("6_da0r4")]
 position = Vector2(269, 484)
