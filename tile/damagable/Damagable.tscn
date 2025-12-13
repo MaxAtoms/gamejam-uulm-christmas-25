@@ -10,11 +10,18 @@ bg_color = Color(1, 1, 1, 1)
 [node name="Damagable" type="Node2D"]
 script = ExtResource("1_5cjur")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-offset_right = 146.0
-offset_bottom = 8.0
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_5cjur")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bckbq")
-value = 80.0
 show_percentage = false
