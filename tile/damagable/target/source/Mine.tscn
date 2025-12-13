@@ -6,9 +6,12 @@
 size = Vector2(24, 26)
 
 [node name="Mine" type="Area2D" groups=["target"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3g76l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_3g76l")

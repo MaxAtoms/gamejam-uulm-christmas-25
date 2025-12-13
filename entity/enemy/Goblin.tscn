@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlnd4d33csi8a"]
 
-[ext_resource type="Script" path="res://entity/enemy/goblin.gd" id="1_keufw"]
+[ext_resource type="Script" uid="uid://dg0npm8a3gbfj" path="res://entity/enemy/goblin.gd" id="1_keufw"]
 [ext_resource type="Texture2D" uid="uid://1qvo2abbiry8" path="res://entity/enemy/goblin.png" id="2_keufw"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_wb21f"]
 
@@ -8,9 +8,9 @@
 radius = 12.0
 height = 32.0
 
-[node name="Goblin" type="RigidBody2D" groups=["enemy"]]
-gravity_scale = 0.0
-lock_rotation = true
+[node name="Goblin" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_keufw")
 metadata/_edit_group_ = true
 
