@@ -35,6 +35,7 @@ height = 24.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -15)
 sprite_frames = SubResource("SpriteFrames_stcyk")
+autoplay = "default"
 frame_progress = 0.16588137
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
