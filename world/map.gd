@@ -11,12 +11,12 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	var deviceId = event.device
-	print(Input.get_connected_joypads())
-	if not players.has(deviceId) and InputEventJoypadButton:
+	
+	if not players.has(deviceId):
 	
 		var playerScene = preload("res://entity/player/Player.tscn")
 		var player = playerScene.instantiate()
-		print("ID: " ,deviceId)
+		
 		player.device_id = deviceId
 		players.set(deviceId, player)  
 		
