@@ -1,0 +1,5 @@
+tilesets-1: https://opengameart.org/content/16x16-game-assets
+    license: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+
+tileset-2: https://opengameart.org/content/overworld-grass-biome
+    license: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
