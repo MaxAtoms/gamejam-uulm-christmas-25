@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlnd4d33csi8a"]
 
 [ext_resource type="Script" path="res://entity/enemy/goblin.gd" id="1_keufw"]
-[ext_resource type="Texture2D" uid="uid://rxb7tq6pxdhx" path="res://entity/enemy/enemy.png" id="2_keufw"]
+[ext_resource type="Texture2D" uid="uid://1qvo2abbiry8" path="res://entity/enemy/goblin.png" id="2_keufw"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_wb21f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6btp"]
