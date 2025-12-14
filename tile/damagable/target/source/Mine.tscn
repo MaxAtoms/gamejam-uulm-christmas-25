@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cscbf5pwdpxr2"]
+[gd_scene load_steps=9 format=3 uid="uid://cscbf5pwdpxr2"]
 
 [ext_resource type="Texture2D" uid="uid://kdrx1eln7hwt" path="res://tile/damagable/target/source/mine.png" id="1_3g76l"]
 [ext_resource type="Script" uid="uid://sdfmthes2pxj" path="res://tile/damagable/target/source/mine.gd" id="1_fshgx"]
