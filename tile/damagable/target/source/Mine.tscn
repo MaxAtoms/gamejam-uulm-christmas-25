@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cscbf5pwdpxr2"]
+[gd_scene load_steps=10 format=3 uid="uid://cscbf5pwdpxr2"]
 
 [ext_resource type="Texture2D" uid="uid://kdrx1eln7hwt" path="res://tile/damagable/target/source/mine.png" id="1_3g76l"]
 [ext_resource type="Script" uid="uid://sdfmthes2pxj" path="res://tile/damagable/target/source/mine.gd" id="1_fshgx"]
@@ -16,6 +16,11 @@ radius = 25.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4p2q"]
 bg_color = Color(0, 0.71, 0.69816667, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_b4p2q"]
+font_size = 11
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Mine" type="StaticBody2D" groups=["target"]]
 collision_layer = 3
 collision_mask = 3
@@ -29,6 +34,7 @@ auto_hide = false
 texture = ExtResource("1_3g76l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_3g76l")
 
@@ -36,6 +42,7 @@ shape = SubResource("RectangleShape2D_3g76l")
 interact_name = "Mine Iron"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+visible = false
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_fshgx")
 
@@ -56,5 +63,22 @@ grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_fshgx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b4p2q")
 show_percentage = false
+
+[node name="ProducesLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = 17.0
+offset_right = 30.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "iron"
+label_settings = SubResource("LabelSettings_b4p2q")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

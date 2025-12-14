@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://oiacafeej027"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fg454"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 0.49803922)
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Turm: 6 Holz
+Kanone: 4 Eisen
+Mauer: 2 Stein"
+label_settings = SubResource("LabelSettings_fg454")

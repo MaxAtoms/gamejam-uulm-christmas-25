@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var interactable: Interactable = $Interactable
 @onready var mining_timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var produces_label: Label = $ProducesLabel
 
 @onready var main = get_tree().get_root().get_node("Map")
 @onready var rubble_scene = preload("res://tile/damagable/buildable/defence/Rubble.tscn")
@@ -22,6 +23,7 @@ func _ready() -> void:
 	mining_timer.wait_time = cooldown_in_sec
 	mining_timer.timeout.connect(func(): _on_mining_finished())
 	damagable.on_death.connect(_on_death)
+	produces_label.text = source_name
 
 func _process(delta: float) -> void:
 	if mining_timer.time_left == 0:

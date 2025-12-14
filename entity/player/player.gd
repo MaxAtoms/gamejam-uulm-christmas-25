@@ -27,7 +27,6 @@ var bag: Bag = Bag.new()
 @onready var map = get_node("/root/Map")
 
 func _ready():
-	#bag.add_item([ArcherTower.new()])
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
 
 func _physics_process(delta: float) -> void:
@@ -40,6 +39,11 @@ func _process(delta: float) -> void:
 		if add_item_label_cooldown <= 0.0:
 			add_item_label_cooldown = 0.0
 			info_label.text = ""
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("drop_items") and event.device == device_id:
+		bag.take_items(bag.size)
+		map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
 
 func show_info_on_label(info: String):
 	info_label.text = info
