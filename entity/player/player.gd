@@ -16,6 +16,8 @@ var direction = Direction.DOWN
 
 var bag: Bag = Bag.new()
 
+@onready var map = get_node("/root/Map")
+
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 
@@ -70,3 +72,5 @@ func receive_items(items: Array[Item]):
 		print("The bag is full")
 	else:
 		print("Added ", items.size(), " items to the bag")
+		
+	map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())

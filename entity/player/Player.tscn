@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=76 format=3 uid="uid://bnu33fspyr4kb"]
+
 
 [ext_resource type="Script" uid="uid://bpv80mqlwfkai" path="res://entity/player/player.gd" id="1_o3s7f"]
 [ext_resource type="Texture2D" uid="uid://ldt0gyrau0e5" path="res://tile/penguin/default/front1.png" id="2_dx687"]

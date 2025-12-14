@@ -13,6 +13,7 @@ func set_size(new_size: int):
 		items = items.slice(0, new_size)
 	size = new_size
 
+# 
 func get_item_type() -> int:
 	if items.size() > 0:
 		return typeof(items[0])

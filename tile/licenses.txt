@@ -1,4 +1,4 @@
-tilesets-1: https://opengameart.org/content/16x16-game-assets
+tilesets-1 and wood.png: https://opengameart.org/content/16x16-game-assets
     license: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 
 tileset-2: https://opengameart.org/content/overworld-grass-biome
@@ -12,3 +12,6 @@ zombie and skeleton: https://opengameart.org/content/zombie-and-skeleton-32x48
 
 panguin: https://opengameart.org/content/tux-kyrodian-legends-style
     license: CC-BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+iron.png and stone.png: https://opengameart.org/content/lpc-ore-and-forge
+    license: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
