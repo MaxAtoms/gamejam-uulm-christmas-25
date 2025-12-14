@@ -8,7 +8,7 @@ func _ready() -> void:
 
 var round_counter = 0
 var phase = Phase.DAY
-@export var day_length := 80.0
+@export var day_length := 60.0
 
 @export var night_color := Color(0.05, 0.05, 0.4, 0.5)
 var curve_strength := 2.0 # higher = more square
