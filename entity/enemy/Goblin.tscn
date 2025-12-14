@@ -9,7 +9,7 @@ radius = 12.0
 height = 32.0
 
 [node name="Goblin" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_keufw")
 metadata/_edit_group_ = true
