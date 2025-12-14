@@ -27,9 +27,7 @@ var inventory_values: Dictionary[int, Array] = {}
 
 func _process(delta):
 	
-	if (get_children().filter(func(c): return c is Mine).size() == 0 \
-	and get_children().filter(func(c): return c is Quarry).size() == 0 \
-	and get_children().filter(func(c): return c is Sawmill).size() == 0):
+	if get_tree().get_nodes_in_group("target").size() < 1:
 		get_tree().change_scene_to_file("res://user_interface/game_over.tscn")
 		
 	
