@@ -102,6 +102,10 @@ func refresh_inventory_display(device_id: int, amount: int, item_type: String, b
 			icon_path = "res://tile/icon/iron.png"
 		elif inventory_values.get(player_id)[0] == "stone":
 			icon_path = "res://tile/icon/stone.png"
+		elif inventory_values.get(player_id)[0] == "archer_tower":
+			icon_path = "res://tile/damagable/buildable/defence/ArcherTower2.png"
+		elif inventory_values.get(player_id)[0] == "canon":
+			icon_path = "res://tile/damagable/buildable/defence/canon.png"
 		
 		var name_label = Label.new()
 		name_label.text = "Player " + str(player_id) + ": "	
