@@ -63,6 +63,9 @@ func _input(event: InputEvent) -> void:
 	
 	#if InputEventJoypadMotion:
 		#print("test")
+	
+func goto_main_menu():
+	get_tree().quit()
 
 func refresh_inventory_display():
 	var players = Input.get_connected_joypads().size() + 1
