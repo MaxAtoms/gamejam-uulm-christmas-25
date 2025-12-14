@@ -16,7 +16,7 @@ radius = 24.020824
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjecy"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="Sawmill" type="StaticBody2D"]
+[node name="Sawmill" type="StaticBody2D" groups=["target"]]
 script = ExtResource("1_onx03")
 
 [node name="Damagable" parent="." instance=ExtResource("2_lfu5r")]
