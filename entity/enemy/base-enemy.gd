@@ -1,12 +1,10 @@
 class_name BaseEnemy
-extends RigidBody2D
+extends CharacterBody2D
 
-@export var max_health = 100
 @export var speed = 5000
 @export var damage = 1
 @export var target_randomness = 0.2
 
-var health = max_health
 var target: Node = null
 
 func _ready() -> void:
@@ -16,8 +14,9 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(target):
 		find_target()
 	if target != null:
-		var velocity = target.global_position - global_position
-		linear_velocity = velocity.normalized() * speed * delta
+		velocity = target.global_position - global_position
+		velocity = velocity.normalized() * speed * delta
+		move_and_slide()
 
 func find_target():
 	var targetNodes = get_tree().get_nodes_in_group("target")

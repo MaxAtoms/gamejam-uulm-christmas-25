@@ -25,3 +25,8 @@ grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_5cjur")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bckbq")
 show_percentage = false
+
+[node name="BarTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="BarTimer" to="." method="_on_bar_timer"]
