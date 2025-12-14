@@ -50,7 +50,7 @@ func _input(event: InputEvent) -> void:
 	var deviceId = event.device
 	
 	if not players.has(deviceId):
-	
+		print(Input.get_connected_joypads())
 		var playerScene = preload("res://entity/player/Player.tscn")
 		var player = playerScene.instantiate()
 		player.position = Vector2(800, 800)
