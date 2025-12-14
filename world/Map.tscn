@@ -1142,7 +1142,7 @@ position = Vector2(1925, 223)
 retardation = 3
 
 [node name="Mine" parent="." instance=ExtResource("6_4fpfk")]
-position = Vector2(1507, 873)
+position = Vector2(1616, 976)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.5, 1.5)
