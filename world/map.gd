@@ -55,6 +55,7 @@ func _input(event: InputEvent) -> void:
 	
 		var playerScene = preload("res://entity/player/Player.tscn")
 		var player = playerScene.instantiate()
+		player.position = Vector2(800, 800)
 		
 		player.device_id = deviceId
 		players.set(deviceId, player)  
