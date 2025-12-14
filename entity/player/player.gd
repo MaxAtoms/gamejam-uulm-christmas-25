@@ -10,6 +10,11 @@ enum Direction {
 	DOWN
 }
 
+const LEFT_BORDER = 70
+const RIGHT_BORDER = 1874
+const TOP_BORDER = 74
+const BOTTOM_BORDER = 1036
+
 var speed = max_speed
 var device_id = 1
 var direction = Direction.DOWN
@@ -76,6 +81,9 @@ func player_movement(delta):
 	else:
 		$AnimatedSprite2D.animation = "idle_" + Direction.keys()[direction].to_lower() + str(device_id)
 
+
+	position.x = clamp(position.x, LEFT_BORDER, RIGHT_BORDER)
+	position.y = clamp(position.y, TOP_BORDER, BOTTOM_BORDER)
 
 	move_and_slide()
 
