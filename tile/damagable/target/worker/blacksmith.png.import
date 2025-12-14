@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hln503puyh1"
-path="res://.godot/imported/mason2.png-85f94472097e4238279178e501092fe3.ctex"
+uid="uid://d4bcy2u0fauv6"
+path="res://.godot/imported/blacksmith.png-b2018133f1e1c8f06135723cac4e08f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/damagable/target/worker/mason2.png"
-dest_files=["res://.godot/imported/mason2.png-85f94472097e4238279178e501092fe3.ctex"]
+source_file="res://tile/damagable/target/worker/blacksmith.png"
+dest_files=["res://.godot/imported/blacksmith.png-b2018133f1e1c8f06135723cac4e08f9.ctex"]
 
 [params]
 

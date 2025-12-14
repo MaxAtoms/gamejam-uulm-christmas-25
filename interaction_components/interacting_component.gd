@@ -11,8 +11,14 @@ func _input(event: InputEvent) -> void:
 		if current_interactions:
 			can_interact = false
 			interact_label.hide()
-			await current_interactions[0].interact.call(self, [] as Array[Item])
+			await current_interactions[0].interact.call(self)
 			can_interact = true
+
+func get_item_type() -> String:
+	return get_parent().get_item_type()
+
+func take_all_items() -> Array[Item]:
+	return get_parent().take_all_items()
 
 func receive_items(items: Array[Item]):
 	get_parent().receive_items(items)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqsqcfy82m1m"
-path="res://.godot/imported/smith.png-c7faa88140cd190c3046d327ef02b7b8.ctex"
+uid="uid://c5ci1tikhqf8g"
+path="res://.godot/imported/stonemason.png-099c995f00db8c51c892a6eebe3406d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/damagable/target/worker/smith.png"
-dest_files=["res://.godot/imported/smith.png-c7faa88140cd190c3046d327ef02b7b8.ctex"]
+source_file="res://tile/damagable/target/worker/stonemason.png"
+dest_files=["res://.godot/imported/stonemason.png-099c995f00db8c51c892a6eebe3406d6.ctex"]
 
 [params]
 
