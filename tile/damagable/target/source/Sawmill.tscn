@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6hajxoo4sfm7"]
 
-[ext_resource type="Script" uid="uid://d1olsysdaopjo" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
+[ext_resource type="Script" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
 [ext_resource type="Texture2D" uid="uid://b0w8oqva2gk3q" path="res://tile/damagable/target/source/sawmill.png" id="2_bjecy"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_lfu5r"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="3_lfu5r"]
@@ -21,6 +21,7 @@ script = ExtResource("1_onx03")
 
 [node name="Damagable" parent="." instance=ExtResource("2_lfu5r")]
 max_health = 200.0
+bar_visible_seconds = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bjecy")

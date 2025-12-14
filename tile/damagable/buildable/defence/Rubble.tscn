@@ -26,9 +26,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx6mu"]
-radius = 6.0
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ltov"]
+size = Vector2(12.542927, 22.28285)
 
 [node name="Rubble" type="StaticBody2D"]
 
@@ -42,8 +41,7 @@ frame_progress = 0.16588137
 texture = ExtResource("1_one1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 4)
+position = Vector2(2.7521746e-06, 3.001024)
 rotation = 1.5687492
 scale = Vector2(1.27578, 1.436079)
-shape = SubResource("CapsuleShape2D_rx6mu")
+shape = SubResource("RectangleShape2D_5ltov")
