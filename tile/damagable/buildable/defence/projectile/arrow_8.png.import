@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqmrv6meokcpq"
-path="res://.godot/imported/arrow_2.png-0cfa731b71b511233a56fde9141abc27.ctex"
+uid="uid://cswxat6diumx2"
+path="res://.godot/imported/arrow_8.png-2ea7b0c41aae43db304d8d98d4ccc514.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/projectiles/arrow_2.png"
-dest_files=["res://.godot/imported/arrow_2.png-0cfa731b71b511233a56fde9141abc27.ctex"]
+source_file="res://tile/damagable/buildable/defence/projectile/arrow_8.png"
+dest_files=["res://.godot/imported/arrow_8.png-2ea7b0c41aae43db304d8d98d4ccc514.ctex"]
 
 [params]
 

@@ -11,6 +11,9 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="ProjectileShooter" parent="." instance=ExtResource("1_o5sfe")]
+projectile_damage = 15
+projectile_speed = 600
+target_range = 400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_o5sfe")

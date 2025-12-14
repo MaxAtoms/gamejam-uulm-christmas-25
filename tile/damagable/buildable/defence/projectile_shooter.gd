@@ -3,9 +3,9 @@ extends Node2D
 @export var projectile_damage = 20
 @export var projectile_speed = 500
 @export var target_range = 300
+@export var projectile = preload("res://tile/damagable/buildable/defence/projectile/Arrow.tscn")
 
 @onready var main = get_tree().get_root().get_node("Map")
-@onready var projectile = load("res://tile/damagable/buildable/defence/Projectile.tscn")
 
 var target: Node2D = null
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://46rptq8vfmvi"]
+
+[ext_resource type="Script" uid="uid://bblyowc0dscno" path="res://projectile.gd" id="1_spe1p"]
+[ext_resource type="Texture2D" uid="uid://c3finnco8nusf" path="res://tile/damagable/buildable/defence/projectile/arrow_5.png" id="2_o4baa"]
+[ext_resource type="Texture2D" uid="uid://va38mgtd1tbw" path="res://tile/damagable/buildable/defence/projectile/arrow_6.png" id="3_inatu"]
+[ext_resource type="Texture2D" uid="uid://nuewsxesfx8h" path="res://tile/damagable/buildable/defence/projectile/arrow_7.png" id="4_iqoq3"]
+[ext_resource type="Texture2D" uid="uid://cswxat6diumx2" path="res://tile/damagable/buildable/defence/projectile/arrow_8.png" id="5_iwm5r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mk5s4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o4baa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_inatu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iqoq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iwm5r")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spe1p"]
+radius = 4.0
+height = 26.0
+
+[node name="Arrow" type="Area2D"]
+z_index = 999
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_spe1p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 2.3561945
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_mk5s4")
+animation = &"spin"
+autoplay = "spin"
+frame = 1
+frame_progress = 0.14346814
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_spe1p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-4, -16, 8, 30)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

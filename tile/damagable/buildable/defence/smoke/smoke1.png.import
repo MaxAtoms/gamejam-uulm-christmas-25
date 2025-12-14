@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvtv2jce21764"
-path="res://.godot/imported/smoke3.png-b653e6046fcc1f9f2477426090286b22.ctex"
+uid="uid://bolvv51oihbkb"
+path="res://.godot/imported/smoke1.png-13ea72b6cde2bd4b2a162915651f3fc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/projectiles/smoke3.png"
-dest_files=["res://.godot/imported/smoke3.png-b653e6046fcc1f9f2477426090286b22.ctex"]
+source_file="res://tile/damagable/buildable/defence/smoke/smoke1.png"
+dest_files=["res://.godot/imported/smoke1.png-13ea72b6cde2bd4b2a162915651f3fc4.ctex"]
 
 [params]
 

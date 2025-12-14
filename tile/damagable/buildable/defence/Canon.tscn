@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxnv130544j7g"]
+[gd_scene load_steps=5 format=3 uid="uid://dxnv130544j7g"]
 
 [ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="1_14cot"]
 [ext_resource type="Texture2D" uid="uid://brewarl0ux441" path="res://tile/damagable/buildable/defence/canon.png" id="2_c10m8"]
+[ext_resource type="PackedScene" uid="uid://bfun8w02o07c0" path="res://tile/damagable/buildable/defence/projectile/CanonBall.tscn" id="2_pbk8l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c10m8"]
 radius = 14.0
@@ -10,10 +11,14 @@ radius = 14.0
 collision_layer = 3
 collision_mask = 3
 
+[node name="ProjectileShooter" parent="." instance=ExtResource("1_14cot")]
+projectile_damage = 30
+projectile_speed = 300
+target_range = 200
+projectile = ExtResource("2_pbk8l")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_c10m8")
-
-[node name="ProjectileShooter" parent="." instance=ExtResource("1_14cot")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

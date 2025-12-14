@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqmemywwbdxse"]
 
-[ext_resource type="Script" uid="uid://b4ne13ckfnke8" path="res://tile/damagable/buildable/defence/defence_base.gd" id="1_7jok5"]
+[ext_resource type="Script" uid="uid://b4ne13ckfnke8" path="res://tile/damagable/buildable/defence/projectile_shooter.gd" id="1_7jok5"]
 
 [node name="ProjectileShooter" type="Node2D"]
 script = ExtResource("1_7jok5")
