@@ -1,12 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba8pqtnyncet8"]
+[gd_scene load_steps=8 format=3 uid="uid://ba8pqtnyncet8"]
 
+[ext_resource type="Texture2D" uid="uid://bolvv51oihbkb" path="res://tile/projectiles/smoke1.png" id="1_5ltov"]
 [ext_resource type="Texture2D" uid="uid://deumvciff57l" path="res://tile/damagable/buildable/defence/rubble.png" id="1_one1c"]
+[ext_resource type="Texture2D" uid="uid://1yup4u5mtnai" path="res://tile/projectiles/smoke2.png" id="2_3t3ki"]
+[ext_resource type="Texture2D" uid="uid://dvtv2jce21764" path="res://tile/projectiles/smoke3.png" id="3_cehii"]
+[ext_resource type="Texture2D" uid="uid://bja2gbyhswqog" path="res://tile/projectiles/smoke4.png" id="4_7ds1e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stcyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5ltov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3t3ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cehii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ds1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx6mu"]
 radius = 6.0
 height = 24.0
 
 [node name="Rubble" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -15)
+sprite_frames = SubResource("SpriteFrames_stcyk")
+autoplay = "default"
+frame_progress = 0.16588137
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_one1c")
