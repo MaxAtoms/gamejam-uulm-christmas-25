@@ -1141,10 +1141,7 @@ position = Vector2(1925, 223)
 retardation = 3
 
 [node name="Mine" parent="." instance=ExtResource("6_4fpfk")]
-position = Vector2(1388, 576)
-
-[node name="Mine2" parent="." instance=ExtResource("6_4fpfk")]
-position = Vector2(858, 918)
+position = Vector2(1507, 873)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -1214,27 +1211,24 @@ text = "End Game
 script = SubResource("GDScript_gpvnj")
 
 [node name="ArcherTower" parent="." instance=ExtResource("6_da0r4")]
-position = Vector2(269, 484)
+position = Vector2(960, 600)
 
 [node name="Canon" parent="." instance=ExtResource("17_7a3st")]
-position = Vector2(858, 877)
-
-[node name="Canon2" parent="." instance=ExtResource("17_7a3st")]
-position = Vector2(1388, 531)
+position = Vector2(1237, 835)
 
 [node name="Quarry" parent="." instance=ExtResource("18_xmor4")]
-position = Vector2(861, 779)
+position = Vector2(1341, 255)
 
 [node name="Sawmill" parent="." instance=ExtResource("20_0wrhf")]
-position = Vector2(979, 857)
+position = Vector2(577, 807)
 
 [node name="Stonemason" parent="." instance=ExtResource("21_r1207")]
-position = Vector2(1007, 958)
+position = Vector2(1259, 688)
 
 [node name="Blacksmith" parent="." instance=ExtResource("22_bo7up")]
-position = Vector2(976, 1053)
+position = Vector2(1133, 599)
 
 [node name="Craftsman" parent="." instance=ExtResource("22_knb4e")]
-position = Vector2(1094, 1025)
+position = Vector2(1107, 727)
 
 [connection signal="button_up" from="CanvasLayer2/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]

@@ -34,6 +34,7 @@ auto_hide = false
 texture = ExtResource("1_3g76l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_3g76l")
 
@@ -41,6 +42,7 @@ shape = SubResource("RectangleShape2D_3g76l")
 interact_name = "Mine Iron"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+visible = false
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_fshgx")
 
