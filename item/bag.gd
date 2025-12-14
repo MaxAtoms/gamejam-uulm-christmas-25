@@ -1,7 +1,7 @@
 class_name Bag
 extends Node
 
-var size: int = 30
+var size: int = 3
 var items: Array[Item] = []
 
 func get_size():
@@ -28,6 +28,9 @@ func can_carry(item_type: int) -> int:
 		return -1;
 	return size - items.size();
 
+# Adds the provided items to the bag.
+# Returns the number of items that were added to the bag.
+# Returns -1 if the bag cannot carry this type of item
 func add_item(new_items: Array[Item]) -> int:
 	if (new_items.size() <= 0):
 		return 0

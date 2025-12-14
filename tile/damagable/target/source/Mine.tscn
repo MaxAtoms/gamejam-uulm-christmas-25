@@ -25,3 +25,7 @@ interact_name = "Mine Iron"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_fshgx")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

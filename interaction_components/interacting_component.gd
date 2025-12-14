@@ -4,6 +4,7 @@ extends Node2D
 @onready var interact_label: Label = $InteractLabel
 var current_interactions := []
 var can_interact := true
+var id = Time.get_ticks_msec()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
@@ -11,7 +12,8 @@ func _input(event: InputEvent) -> void:
 			can_interact = false
 			interact_label.hide()
 			
-			await current_interactions[0].interact.call(self)
+			var received_elements: Array[Item] = await current_interactions[0].interact.call(self, [] as Array[Item])
+			get_parent().receive_items(received_elements)
 			
 			can_interact = true
 
