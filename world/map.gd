@@ -59,6 +59,5 @@ func _input(event: InputEvent) -> void:
 		players.set(deviceId, player)  
 		
 		add_child(player)
-	
 	#if InputEventJoypadMotion:
 		#print("test")

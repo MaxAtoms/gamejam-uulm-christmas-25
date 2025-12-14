@@ -3,9 +3,16 @@ extends CharacterBody2D
 
 @export var max_speed = 9000
 @export var player_id = 1
+enum Direction {
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+}
 
 var speed = max_speed
 var device_id = 1
+var direction = Direction.DOWN
 
 var bag: Bag = Bag.new()
 
@@ -29,7 +36,27 @@ func player_movement(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed * delta
+		
+		
+	$AnimatedSprite2D.play()
 
+	if velocity.x > 0:
+		$AnimatedSprite2D.animation = "go_right" + str(device_id)
+		direction = Direction.RIGHT
+	elif velocity.x < 0:
+		$AnimatedSprite2D.animation = "go_left" + str(device_id)
+		direction = Direction.LEFT
+	elif velocity.y > 0:
+		$AnimatedSprite2D.animation = "go_down" + str(device_id)
+		direction = Direction.DOWN
+	elif velocity.y < 0:
+		$AnimatedSprite2D.animation = "go_up" + str(device_id)
+		direction = Direction.UP
+	else:
+		$AnimatedSprite2D.animation = "idle_" + Direction.keys()[direction].to_lower() + str(device_id)
+		print("idle_" + Direction.keys()[direction].to_lower() + str(device_id))
+	
+		
 	move_and_slide()
 
 func receive_items(items: Array[Item]):
