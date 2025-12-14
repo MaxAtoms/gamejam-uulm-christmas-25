@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var max_speed = 9000
@@ -5,6 +6,8 @@ extends CharacterBody2D
 
 var speed = max_speed
 var device_id = 1
+
+var bag: Bag = Bag.new()
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
@@ -28,3 +31,15 @@ func player_movement(delta):
 		velocity = velocity.normalized() * speed * delta
 
 	move_and_slide()
+
+func receive_items(items: Array[Item]):
+	if items.size() == 0:
+		print("The player did not receive an item from the mine")
+		return
+	var added_items = bag.add_item(items)
+	if added_items == -1:
+		print("This player cannot carry this type of item")
+	elif added_items == 0:
+		print("The bag is full")
+	else:
+		print("Added ", items.size(), " items to the bag")
