@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://t8cefufwgh8b"]
 
-[ext_resource type="Texture2D" uid="uid://chv28vtweidbq" path="res://tile/damagable/target/source/quarry.png" id="1_3k7p1"]
-[ext_resource type="Script" uid="uid://tjufnrfv5plr" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
+[ext_resource type="Script" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
+[ext_resource type="Texture2D" uid="uid://dt26oxm0cmlrl" path="res://tile/damagable/target/source/quarry2.png" id="2_5yxaw"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="2_7j31m"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_tehcs"]
 
@@ -22,11 +22,14 @@ collision_mask = 3
 script = ExtResource("1_5yxaw")
 
 [node name="Damagable" parent="." instance=ExtResource("2_tehcs")]
+max_health = 200.0
+bar_visible_seconds = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3k7p1")
+texture = ExtResource("2_5yxaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2.5, 1.5)
 shape = SubResource("RectangleShape2D_3k7p1")
 
@@ -34,6 +37,7 @@ shape = SubResource("RectangleShape2D_3k7p1")
 interact_name = "Mine Stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+visible = false
 position = Vector2(3, 1)
 shape = SubResource("CircleShape2D_5yxaw")
 

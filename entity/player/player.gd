@@ -21,6 +21,10 @@ var bag: Bag = Bag.new()
 
 @onready var map = get_node("/root/Map")
 
+func _ready():
+	#bag.add_item([ArcherTower.new()])
+	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
+
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	
@@ -74,7 +78,14 @@ func player_movement(delta):
 	
 		
 	move_and_slide()
-	
+
+func get_item_type() -> String:
+	return bag.get_item_type()
+
+func take_all_items() -> Array[Item]:
+	var items = bag.take_items(bag.size)
+	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
+	return items
 
 func receive_items(items: Array[Item]):
 	if items.size() == 0:
@@ -86,6 +97,16 @@ func receive_items(items: Array[Item]):
 	elif added_items == 0:
 		show_info_on_label("Your bag is already full")
 	else:
-		show_info_on_label("+ " + str(items.size()) + " " + items[0].get_type())
-	
+		print("Added ", items.size(), " items to the bag")
+
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
+
+		
+	#map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
+
+	
+func get_bag_type():
+	return bag.get_item_type()
+
+func take_item():
+	bag.take_items(1)

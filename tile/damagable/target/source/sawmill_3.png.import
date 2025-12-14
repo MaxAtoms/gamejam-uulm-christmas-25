@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqsqcfy82m1m"
-path="res://.godot/imported/smith.png-c7faa88140cd190c3046d327ef02b7b8.ctex"
+uid="uid://dinuqf2mo48qd"
+path="res://.godot/imported/sawmill_3.png-fa24872b0dd5e3979cf5a078abd87104.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/damagable/target/worker/smith.png"
-dest_files=["res://.godot/imported/smith.png-c7faa88140cd190c3046d327ef02b7b8.ctex"]
+source_file="res://tile/damagable/target/source/sawmill_3.png"
+dest_files=["res://.godot/imported/sawmill_3.png-fa24872b0dd5e3979cf5a078abd87104.ctex"]
 
 [params]
 

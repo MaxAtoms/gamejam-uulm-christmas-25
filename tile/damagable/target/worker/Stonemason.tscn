@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://boe0yl0jsabrv"]
+[gd_scene load_steps=9 format=3 uid="uid://boe0yl0jsabrv"]
 
-[node name="Stonemason" type="Node2D"]
+[ext_resource type="Script" uid="uid://cm363bud650rx" path="res://tile/damagable/target/worker/stonemason.gd" id="1_8tnqj"]
+[ext_resource type="Texture2D" uid="uid://c5ci1tikhqf8g" path="res://tile/damagable/target/worker/stonemason.png" id="1_60eak"]
+[ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_8tnqj"]
+[ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="3_qu8kn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ske2f"]
+size = Vector2(19, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2rtdv"]
+radius = 26.019224
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8tnqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu8kn"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Stonemason" type="StaticBody2D" groups=["target"]]
+script = ExtResource("1_8tnqj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_60eak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_ske2f")
+
+[node name="Damagable" parent="." instance=ExtResource("2_8tnqj")]
+max_health = 200.0
+
+[node name="Interactable" parent="." instance=ExtResource("3_qu8kn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+visible = false
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_2rtdv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_8tnqj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qu8kn")
+show_percentage = false
+
+[connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

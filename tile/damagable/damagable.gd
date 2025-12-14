@@ -1,3 +1,4 @@
+class_name Damagable
 extends Node2D
 
 @export var max_health: float = 100

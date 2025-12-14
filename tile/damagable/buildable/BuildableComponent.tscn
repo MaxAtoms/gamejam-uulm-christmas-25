@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddnikeje3rpmx"]
+
+[ext_resource type="Script" uid="uid://cu56i41vem2dy" path="res://tile/damagable/buildable/buildable_component.gd" id="1_p7urt"]
+
+[node name="BuildableComponent" type="Node2D"]
+script = ExtResource("1_p7urt")

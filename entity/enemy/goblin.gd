@@ -3,10 +3,6 @@ extends BaseEnemy
 @onready var damagable = $Damagable
 
 func _on_death() -> void:
-	$GoblinAnimation.play()
-	#ToDO: doesnt work
-	$GoblinAnimation.animation = "death"
-	#if $GoblinAnimation.animation_looped:
 	queue_free()
 
 func walkanimation():
