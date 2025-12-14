@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b1p5bf3yvjm4s"]
+[gd_scene load_steps=35 format=4 uid="uid://b1p5bf3yvjm4s"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrmg6slcs84" path="res://tile/environment/decoration/dirt.png" id="1_daoqi"]
 [ext_resource type="Script" uid="uid://40go1natg6e3" path="res://world/map.gd" id="1_xawsu"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://53rrn67ywqyv" path="res://tile/tilesets-1/4.png" id="9_7a3st"]
 [ext_resource type="Texture2D" uid="uid://b7txhflm72mwh" path="res://tile/tilesets-1/5.png" id="10_gpvnj"]
 [ext_resource type="Texture2D" uid="uid://3tphopms6mx1" path="res://tile/tilesets-1/6.png" id="11_xmor4"]
+[ext_resource type="FontFile" uid="uid://cgl26ycgmnox5" path="res://tile/fonts/Righteous.ttf" id="15_gpvnj"]
 [ext_resource type="PackedScene" uid="uid://dxnv130544j7g" path="res://tile/damagable/buildable/defence/Canon.tscn" id="17_7a3st"]
 [ext_resource type="PackedScene" uid="uid://ba8pqtnyncet8" path="res://tile/damagable/buildable/defence/Rubble.tscn" id="18_gpvnj"]
 [ext_resource type="PackedScene" uid="uid://t8cefufwgh8b" path="res://tile/damagable/target/source/Quarry.tscn" id="18_xmor4"]
@@ -1075,6 +1076,12 @@ sources/11 = SubResource("TileSetAtlasSource_r1207")
 sources/12 = SubResource("TileSetAtlasSource_bo7up")
 sources/13 = SubResource("TileSetAtlasSource_knb4e")
 
+[sub_resource type="FontVariation" id="FontVariation_xmor4"]
+base_font = ExtResource("15_gpvnj")
+
+[sub_resource type="FontVariation" id="FontVariation_0wrhf"]
+base_font = ExtResource("15_gpvnj")
+
 [sub_resource type="GDScript" id="GDScript_gpvnj"]
 script/source = "extends Button
 
@@ -1161,7 +1168,7 @@ z_index = 150
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 32.0
+offset_bottom = 48.0
 grow_horizontal = 2
 color = Color(0.19434929, 0.19434926, 0.19434926, 0.7176471)
 
@@ -1169,7 +1176,7 @@ color = Color(0.19434929, 0.19434926, 0.19434926, 0.7176471)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 32.0
+offset_bottom = 48.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
@@ -1181,6 +1188,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
 z_index = 200
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_xmor4")
+theme_override_font_sizes/font_size = 12
 text = "Current Time:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
@@ -1190,6 +1199,8 @@ alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_0wrhf")
+theme_override_font_sizes/font_size = 12
 text = "End Game
 "
 script = SubResource("GDScript_gpvnj")

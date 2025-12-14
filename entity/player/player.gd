@@ -56,7 +56,6 @@ func player_movement(delta):
 		direction = Direction.UP
 	else:
 		$AnimatedSprite2D.animation = "idle_" + Direction.keys()[direction].to_lower() + str(device_id)
-		#print("idle_" + Direction.keys()[direction].to_lower() + str(device_id))
 	
 		
 	move_and_slide()
@@ -74,5 +73,5 @@ func receive_items(items: Array[Item]):
 		print("The bag is full")
 	else:
 		print("Added ", items.size(), " items to the bag")
-		
-	map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
+	
+	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())

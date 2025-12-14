@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfxoimt6hsr3t"]
+[gd_scene load_steps=6 format=3 uid="uid://bfxoimt6hsr3t"]
+
+[ext_resource type="FontFile" uid="uid://cgl26ycgmnox5" path="res://tile/fonts/Righteous.ttf" id="1_1aipp"]
 
 [sub_resource type="GDScript" id="GDScript_ypthw"]
 script/source = "extends Control
@@ -20,6 +22,15 @@ func on_start_pressed():
 func on_quit_pressed():
 	get_tree().quit()
 "
+
+[sub_resource type="FontVariation" id="FontVariation_xqlja"]
+base_font = ExtResource("1_1aipp")
+
+[sub_resource type="FontVariation" id="FontVariation_ejyv4"]
+base_font = ExtResource("1_1aipp")
+
+[sub_resource type="FontVariation" id="FontVariation_l8n0t"]
+base_font = ExtResource("1_1aipp")
 
 [node name="MainMenu" type="Control"]
 layout_direction = 2
@@ -52,18 +63,21 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_xqlja")
 theme_override_font_sizes/font_size = 100
-text = "Onlydefense"
+text = "MISSED STEAKS"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = SubResource("FontVariation_ejyv4")
+theme_override_font_sizes/font_size = 20
 text = "PLAY"
 
 [node name="Button2" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = SubResource("FontVariation_l8n0t")
+theme_override_font_sizes/font_size = 20
 text = "QUIT"
 
 [connection signal="button_up" from="CenterContainer/MarginContainer/VBoxContainer/Button" to="." method="on_start_pressed"]
