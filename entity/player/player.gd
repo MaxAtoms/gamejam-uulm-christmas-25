@@ -13,17 +13,28 @@ enum Direction {
 var speed = max_speed
 var device_id = 1
 var direction = Direction.DOWN
+var add_item_label_cooldown = 0.0
+
+@onready var info_label = get_node("AddItemLabel")
 
 var bag: Bag = Bag.new()
 
 @onready var map = get_node("/root/Map")
 
-func _ready():
-	bag.add_item([ArcherTower.new()])
-	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
-
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
+	
+func _process(delta: float) -> void:
+	if add_item_label_cooldown > 0.0:
+		add_item_label_cooldown -= delta
+		
+		if add_item_label_cooldown <= 0.0:
+			add_item_label_cooldown = 0.0
+			info_label.text = ""
+
+func show_info_on_label(info: String):
+	info_label.text = info
+	add_item_label_cooldown = 2.0
 
 func player_movement(delta):
 	if Input.get_action_strength("move_right_%s" % [device_id]):
@@ -69,14 +80,14 @@ func receive_items(items: Array[Item]):
 	print(Iron.new().get_type())
 	print(Item.new().get_type())
 	if items.size() == 0:
-		print("The player did not receive an item from the mine")
+		show_info_on_label("No Items received")
 		return
 	var added_items = bag.add_item(items)
 	if added_items == -1:
-		print("This player cannot carry this type of item")
+		show_info_on_label("Can only carry one type of item")
 	elif added_items == 0:
-		print("The bag is full")
+		show_info_on_label("Your bag is already full")
 	else:
-		print("Added ", items.size(), " items to the bag")
+		show_info_on_label("+ " + str(items.size()) + " " + items[0].get_type())
 	
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())

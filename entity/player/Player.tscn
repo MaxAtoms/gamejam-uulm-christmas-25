@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://bnu33fspyr4kb"]
+[gd_scene load_steps=81 format=3 uid="uid://bnu33fspyr4kb"]
 
 [ext_resource type="Script" uid="uid://bpv80mqlwfkai" path="res://entity/player/player.gd" id="1_o3s7f"]
 [ext_resource type="Texture2D" uid="uid://ldt0gyrau0e5" path="res://tile/penguin/default/front1.png" id="2_dx687"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://bm62nlxd7agtx" path="res://tile/penguin/tuxair.png" id="51_ibuna"]
 [ext_resource type="Texture2D" uid="uid://bea4n5feksdl1" path="res://tile/penguin/tuxfire.png" id="52_ekv3j"]
 [ext_resource type="Texture2D" uid="uid://7np6iyt8l4os" path="res://tile/penguin/tuxice.png" id="53_mrwja"]
+[ext_resource type="FontFile" uid="uid://cgl26ycgmnox5" path="res://tile/fonts/Righteous.ttf" id="55_mrwja"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5o33p"]
 atlas = ExtResource("2_o3s7f")
@@ -542,6 +543,18 @@ animations = [{
 radius = 6.0
 height = 20.0
 
+[sub_resource type="FontVariation" id="FontVariation_mrwja"]
+base_font = ExtResource("55_mrwja")
+
+[sub_resource type="SystemFont" id="SystemFont_xa01l"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qcfv7"]
+font = SubResource("SystemFont_xa01l")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 9
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 7
 script = ExtResource("1_o3s7f")
@@ -556,3 +569,21 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_sntwv")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_5o33p")]
+
+[node name="AddItemLabel" type="Label" parent="."]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_mrwja")
+label_settings = SubResource("LabelSettings_qcfv7")
+horizontal_alignment = 1
+vertical_alignment = 1

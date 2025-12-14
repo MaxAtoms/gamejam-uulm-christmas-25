@@ -16,7 +16,7 @@ var curve_strength := 2.0 # higher = more square
 @onready var night_color_rect = $CanvasLayer/ColorRect
 @onready var time_label = $CanvasLayer2/Control/MarginContainer/HBoxContainer/Label
 
-var time := 4 #day_length / 2
+var time := 4.0 #day_length / 2
 var is_night := false
 
 @export var max_player = 4
@@ -63,6 +63,8 @@ func _process(delta):
 	if time_label != null:
 		time_label.text = "Current Time: " + ("Night" if is_night else "Day  ")
 	
+	print("current time: " + str(time) + " enemies " + str(enemies_present))
+	
 func _input(event: InputEvent) -> void:
 	var deviceId = event.device
 	
@@ -96,6 +98,9 @@ func refresh_inventory_display(device_id: int, amount: int, item_type: String, b
 	
 	for player_id in sorted_keys:
 		print("Player " + str(player_id))
+		
+		if inventory_values.get(player_id)[1] == 0:
+			continue
 		
 		var icon_path = "res://tile/icon/wood.png"	
 		if inventory_values.get(player_id)[0] == "iron":

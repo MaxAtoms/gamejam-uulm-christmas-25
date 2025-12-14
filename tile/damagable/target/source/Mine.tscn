@@ -13,7 +13,7 @@ radius = 22.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fshgx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4p2q"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0, 0.71, 0.69816667, 1)
 
 [node name="Mine" type="StaticBody2D" groups=["target"]]
 collision_layer = 3

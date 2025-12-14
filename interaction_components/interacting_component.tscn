@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpb2ho2elsry4"]
+[gd_scene load_steps=7 format=3 uid="uid://bpb2ho2elsry4"]
 
 [ext_resource type="Script" uid="uid://b18k3jcgyyfq8" path="res://interaction_components/interacting_component.gd" id="1_xa01l"]
+[ext_resource type="FontFile" uid="uid://cgl26ycgmnox5" path="res://tile/fonts/Righteous.ttf" id="2_1m31a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqmmv"]
 radius = 27.0
+
+[sub_resource type="FontVariation" id="FontVariation_lh3wi"]
+base_font = ExtResource("2_1m31a")
 
 [sub_resource type="SystemFont" id="SystemFont_xa01l"]
 subpixel_positioning = 0
@@ -37,6 +41,7 @@ offset_right = 59.0
 offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_lh3wi")
 text = "E to Interact"
 label_settings = SubResource("LabelSettings_xa01l")
 horizontal_alignment = 1
