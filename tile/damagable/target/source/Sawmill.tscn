@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6hajxoo4sfm7"]
+[gd_scene load_steps=10 format=3 uid="uid://c6hajxoo4sfm7"]
 
 [ext_resource type="Script" uid="uid://d1olsysdaopjo" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
 [ext_resource type="Texture2D" uid="uid://b0w8oqva2gk3q" path="res://tile/damagable/target/source/sawmill.png" id="2_bjecy"]
@@ -15,6 +15,11 @@ radius = 24.020824
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjecy"]
 bg_color = Color(0, 0.70980394, 0.69803923, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjecy"]
+font_size = 11
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Sawmill" type="StaticBody2D" groups=["target"]]
 collision_layer = 3
@@ -56,3 +61,20 @@ grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_onx03")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bjecy")
 show_percentage = false
+
+[node name="ProducesLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = 22.0
+offset_right = 30.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "iron"
+label_settings = SubResource("LabelSettings_bjecy")
+horizontal_alignment = 1
+vertical_alignment = 1
