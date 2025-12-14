@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gijongf86j0f"]
+[gd_scene load_steps=6 format=3 uid="uid://gijongf86j0f"]
 
 [ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="1_o5sfe"]
+[ext_resource type="Script" uid="uid://dlkldxopub0da" path="res://tile/damagable/buildable/defence/archer_tower.gd" id="1_se5ox"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_1ib7a"]
 [ext_resource type="Texture2D" uid="uid://bw2r31flwi38m" path="res://tile/damagable/buildable/defence/ArcherTower2.png" id="2_o5sfe"]
 
@@ -10,6 +11,7 @@ size = Vector2(35, 50)
 [node name="ArcherTower" type="StaticBody2D" groups=["defence"]]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_se5ox")
 
 [node name="ProjectileShooter" parent="." instance=ExtResource("1_o5sfe")]
 projectile_damage = 15
@@ -17,6 +19,8 @@ projectile_speed = 600
 target_range = 400
 
 [node name="Damagable" parent="." instance=ExtResource("2_1ib7a")]
+bar_offset = 15.0
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_o5sfe")
@@ -25,3 +29,5 @@ texture = ExtResource("2_o5sfe")
 visible = false
 position = Vector2(-1.5, 6)
 shape = SubResource("RectangleShape2D_o5sfe")
+
+[connection signal="on_death" from="Damagable" to="." method="_on_damagable_on_death"]

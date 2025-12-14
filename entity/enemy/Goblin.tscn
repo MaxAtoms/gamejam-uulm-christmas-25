@@ -169,6 +169,7 @@ animations = [{
 }]
 
 [node name="Goblin" type="CharacterBody2D" groups=["enemy"]]
+z_index = 10
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_keufw")
@@ -180,6 +181,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CapsuleShape2D_6s4gu")
 
 [node name="Damagable" parent="." instance=ExtResource("2_wb21f")]
+bar_offset = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_l6btp")

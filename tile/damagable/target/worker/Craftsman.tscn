@@ -17,7 +17,13 @@ radius = 21.023796
 bg_color = Color(0, 0.70980394, 0.69803923, 1)
 
 [node name="Craftsman" type="StaticBody2D" groups=["target"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_yfkki")
+
+[node name="Damagable" parent="." instance=ExtResource("4_y8m0o")]
+max_health = 200.0
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jk5st")
@@ -50,5 +56,4 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_u0eku")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lly3p")
 show_percentage = false
 
-[node name="Damagable" parent="." instance=ExtResource("4_y8m0o")]
-max_health = 200.0
+[connection signal="on_death" from="Damagable" to="." method="_on_damagable_on_death"]

@@ -27,11 +27,11 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	
+
 func _process(delta: float) -> void:
 	if add_item_label_cooldown > 0.0:
 		add_item_label_cooldown -= delta
-		
+
 		if add_item_label_cooldown <= 0.0:
 			add_item_label_cooldown = 0.0
 			info_label.text = ""
@@ -47,7 +47,7 @@ func player_movement(delta):
 		velocity.x = -1
 	else:
 		velocity.x = 0
-		
+
 	if Input.get_action_strength("move_down_%s" % [device_id]):
 		velocity.y = 1
 	elif Input.get_action_strength("move_up_%s" % [device_id]):
@@ -57,8 +57,8 @@ func player_movement(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed * delta
-		
-		
+
+
 	$AnimatedSprite2D.play()
 
 	if velocity.x > 0:
@@ -75,8 +75,8 @@ func player_movement(delta):
 		direction = Direction.UP
 	else:
 		$AnimatedSprite2D.animation = "idle_" + Direction.keys()[direction].to_lower() + str(device_id)
-	
-		
+
+
 	move_and_slide()
 
 func get_item_type() -> String:
@@ -101,10 +101,10 @@ func receive_items(items: Array[Item]):
 
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
 
-		
+
 	#map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
 
-	
+
 func get_bag_type():
 	return bag.get_item_type()
 

@@ -23,7 +23,7 @@ script = ExtResource("1_fshgx")
 
 [node name="Damagable" parent="." instance=ExtResource("2_b4p2q")]
 max_health = 200.0
-bar_visible_seconds = 5
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3g76l")

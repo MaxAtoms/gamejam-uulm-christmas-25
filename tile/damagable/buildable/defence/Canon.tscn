@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxnv130544j7g"]
+[gd_scene load_steps=7 format=3 uid="uid://dxnv130544j7g"]
 
+[ext_resource type="Script" uid="uid://b8cmog1sr4tfa" path="res://tile/damagable/buildable/defence/canon.gd" id="1_5nlwg"]
 [ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="1_14cot"]
 [ext_resource type="Texture2D" uid="uid://brewarl0ux441" path="res://tile/damagable/buildable/defence/canon.png" id="2_c10m8"]
 [ext_resource type="PackedScene" uid="uid://bfun8w02o07c0" path="res://tile/damagable/buildable/defence/projectile/CanonBall.tscn" id="2_pbk8l"]
@@ -11,6 +12,7 @@ radius = 14.0
 [node name="Canon" type="StaticBody2D" groups=["defence"]]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_5nlwg")
 
 [node name="ProjectileShooter" parent="." instance=ExtResource("1_14cot")]
 projectile_damage = 30
@@ -20,6 +22,7 @@ shoot_interval = 1.5
 projectile = ExtResource("2_pbk8l")
 
 [node name="Damagable" parent="." instance=ExtResource("3_2vg5d")]
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_c10m8")
@@ -28,3 +31,5 @@ texture = ExtResource("2_c10m8")
 visible = false
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_c10m8")
+
+[connection signal="on_death" from="Damagable" to="." method="_on_damagable_on_death"]

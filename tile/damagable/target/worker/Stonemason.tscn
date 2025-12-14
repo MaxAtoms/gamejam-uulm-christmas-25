@@ -17,16 +17,19 @@ radius = 26.019224
 bg_color = Color(0, 0.70980394, 0.69803923, 1)
 
 [node name="Stonemason" type="StaticBody2D" groups=["target"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_8tnqj")
+
+[node name="Damagable" parent="." instance=ExtResource("2_8tnqj")]
+max_health = 200.0
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_60eak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ske2f")
-
-[node name="Damagable" parent="." instance=ExtResource("2_8tnqj")]
-max_health = 200.0
 
 [node name="Interactable" parent="." instance=ExtResource("3_qu8kn")]
 interact_name = "Drop Stone/Craft Wall"
@@ -53,4 +56,5 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_8tnqj")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qu8kn")
 show_percentage = false
 
+[connection signal="on_death" from="Damagable" to="." method="_on_damagable_on_death"]
 [connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

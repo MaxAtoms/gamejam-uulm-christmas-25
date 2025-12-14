@@ -17,11 +17,13 @@ radius = 24.020824
 bg_color = Color(0, 0.70980394, 0.69803923, 1)
 
 [node name="Sawmill" type="StaticBody2D" groups=["target"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_onx03")
 
 [node name="Damagable" parent="." instance=ExtResource("2_lfu5r")]
 max_health = 200.0
-bar_visible_seconds = 5
+auto_hide = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bjecy")
