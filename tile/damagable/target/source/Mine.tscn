@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="2_qj8e6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g76l"]
-size = Vector2(24, 28)
+size = Vector2(32, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fshgx"]
-radius = 22.0
+radius = 25.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fshgx"]
 
@@ -29,13 +29,14 @@ bar_visible_seconds = 5
 texture = ExtResource("1_3g76l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_3g76l")
 
 [node name="Interactable" parent="." instance=ExtResource("2_qj8e6")]
 interact_name = "Mine Iron"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_fshgx")
 
 [node name="Timer" type="Timer" parent="."]

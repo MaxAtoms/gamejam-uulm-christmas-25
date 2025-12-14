@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6hajxoo4sfm7"]
 
-[ext_resource type="Script" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
+[ext_resource type="Script" uid="uid://d1olsysdaopjo" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
 [ext_resource type="Texture2D" uid="uid://b0w8oqva2gk3q" path="res://tile/damagable/target/source/sawmill.png" id="2_bjecy"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_lfu5r"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="3_lfu5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04k31"]
-size = Vector2(25, 31)
+size = Vector2(29, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2kuf"]
 radius = 24.020824
@@ -27,13 +27,14 @@ bar_visible_seconds = 5
 texture = ExtResource("2_bjecy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -0.5)
+position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_04k31")
 
 [node name="Interactable" parent="." instance=ExtResource("3_lfu5r")]
 interact_name = "Chop Wood"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_w2kuf")
 
 [node name="Timer" type="Timer" parent="."]

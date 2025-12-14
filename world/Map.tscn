@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c6hajxoo4sfm7" path="res://tile/damagable/target/source/Sawmill.tscn" id="20_0wrhf"]
 [ext_resource type="PackedScene" uid="uid://boe0yl0jsabrv" path="res://tile/damagable/target/worker/Stonemason.tscn" id="21_r1207"]
 [ext_resource type="PackedScene" uid="uid://bqj1upprtfbmd" path="res://tile/damagable/target/worker/Blacksmith.tscn" id="22_bo7up"]
+[ext_resource type="PackedScene" uid="uid://bnpnnitk7x7n3" path="res://tile/damagable/target/worker/Craftsman.tscn" id="22_knb4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfat1"]
 texture = ExtResource("1_daoqi")
@@ -1230,5 +1231,8 @@ position = Vector2(1007, 958)
 
 [node name="Blacksmith" parent="." instance=ExtResource("22_bo7up")]
 position = Vector2(976, 1053)
+
+[node name="Craftsman" parent="." instance=ExtResource("22_knb4e")]
+position = Vector2(1094, 1025)
 
 [connection signal="button_up" from="CanvasLayer2/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]
