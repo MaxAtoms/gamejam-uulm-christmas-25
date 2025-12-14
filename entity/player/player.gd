@@ -86,6 +86,6 @@ func receive_items(items: Array[Item]):
 	elif added_items == 0:
 		show_info_on_label("Your bag is already full")
 	else:
-		show_info_on_label("+ " + str(items.size()) + " " + items[0].get_type())
+		print("Added ", items.size(), " items to the bag")
 	
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
