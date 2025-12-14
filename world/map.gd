@@ -1,9 +1,14 @@
 extends Node2D
 
+signal phase_change
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+
+var round_counter = 0
+var phase = Phase.DAY
 @export var day_length := 20.0
 
 @export var night_color := Color(0.05, 0.05, 0.4, 0.5)
@@ -21,9 +26,8 @@ var players = {}
 var inventory_values: Dictionary[int, Vector2i] = {}
 
 func _process(delta):
-	
 	var enemies_present: bool = get_node("Spawner").get_child_count() > 0
-				
+
 	time += delta
 	if time > day_length:
 		time -= day_length
@@ -42,6 +46,16 @@ func _process(delta):
 
 	# Day / night state
 	is_night = night_strength > 0.5
+	
+	if is_night && phase == Phase.DAY:
+		phase = Phase.NIGHT
+		round_counter = round_counter + 1
+		phase_change.emit(phase, round_counter)
+		print("Night phase started, Round: ", round_counter)
+	elif !is_night && phase == Phase.NIGHT:
+		phase = Phase.DAY
+		phase_change.emit(phase, round_counter)
+		print("Day phase started, Round: ", round_counter)
 	
 	if time > day_length / 4 and time < day_length / 2 and enemies_present:
 		time = day_length / 4
