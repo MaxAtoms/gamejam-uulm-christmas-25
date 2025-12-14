@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tdu4b5g37njq"
-path="res://.godot/imported/wall1.png-cd84662c77d680181e18cdee2738fa3f.ctex"
+uid="uid://bj0580r3hrokl"
+path="res://.godot/imported/wall.png-cc257dcb5966d3aa3868e4a27b50d07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/damagable/buildable/barrier/wall1.png"
-dest_files=["res://.godot/imported/wall1.png-cd84662c77d680181e18cdee2738fa3f.ctex"]
+source_file="res://tile/damagable/buildable/defence/wall.png"
+dest_files=["res://.godot/imported/wall.png-cc257dcb5966d3aa3868e4a27b50d07d.ctex"]
 
 [params]
 
