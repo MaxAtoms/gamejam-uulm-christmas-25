@@ -13,14 +13,15 @@ signal on_death
 var health: float = max_health
 
 func _ready() -> void:
-	$HealthBar.max_value = max_health
-	$HealthBar.value = health
-	if auto_hide: $HealthBar.hide()
 	$HealthBar.position += Vector2(0, -bar_offset)
 	var style = StyleBoxFlat.new()
 	style.bg_color = bar_color
 	style.shadow_color = Color.BLACK
 	$HealthBar.add_theme_stylebox_override("fill", style)
+	$HealthBar.max_value = max_health
+	health = max_health
+	$HealthBar.value = health
+	if auto_hide: $HealthBar.hide()
 
 func damage(amount: float) -> void:
 	if health <= 0:
