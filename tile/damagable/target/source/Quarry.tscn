@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://t8cefufwgh8b"]
+[gd_scene load_steps=8 format=3 uid="uid://t8cefufwgh8b"]
 
 [ext_resource type="Texture2D" uid="uid://chv28vtweidbq" path="res://tile/damagable/target/source/quarry.png" id="1_3k7p1"]
-[ext_resource type="Script" uid="uid://tjufnrfv5plr" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
+[ext_resource type="Script" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="2_7j31m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k7p1"]
@@ -9,6 +9,11 @@ size = Vector2(25, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5yxaw"]
 radius = 25.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yxaw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tehcs"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Quarry" type="StaticBody2D" groups=["target"]]
 collision_layer = 3
@@ -30,5 +35,21 @@ position = Vector2(3, 1)
 shape = SubResource("CircleShape2D_5yxaw")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_5yxaw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tehcs")
+show_percentage = false
 
 [connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

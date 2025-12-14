@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var interactable: Area2D = $Interactable
 @onready var mining_timer: Timer = $Timer
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 var produced_items_per_request = 1
 var cooldown_in_sec = 2
@@ -13,6 +14,12 @@ func _ready() -> void:
 	interactable.cancel_interaction = _on_cancel_interaction
 	mining_timer.wait_time = cooldown_in_sec
 	mining_timer.timeout.connect(func(): _on_mining_finished())
+	
+func _process(delta: float):
+	if mining_timer.time_left == 0:
+		progress_bar.value = 0
+		return
+	progress_bar.value =  (1 - (mining_timer.time_left / mining_timer.wait_time)) * 100
 
 func _on_interact(interacting_component: InteractingComponent, _items: Array[Item]):
 	if interactable.is_interactable:
