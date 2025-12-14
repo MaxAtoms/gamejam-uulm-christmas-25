@@ -1102,9 +1102,6 @@ func _process(delta: float) -> void:
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_xawsu")
-day_length = null
-night_color = null
-max_player = null
 
 [node name="ObjectLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -1177,7 +1174,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 48.0
 grow_horizontal = 2
-color = Color(0.19434929, 0.19434926, 0.19434926, 0.7176471)
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.8392157)
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Control"]
 layout_mode = 1

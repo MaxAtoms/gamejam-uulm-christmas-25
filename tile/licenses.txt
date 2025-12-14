@@ -18,3 +18,6 @@ iron.png and stone.png: https://opengameart.org/content/lpc-ore-and-forge
 
 righteous font: https://otter-and-bench.itch.io/righteous
     license: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+
+wall: https://opengameart.org/content/castle-tiles-for-rpgs
+    license: CC-BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
