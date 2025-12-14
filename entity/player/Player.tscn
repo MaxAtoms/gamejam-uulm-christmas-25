@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnu33fspyr4kb"]
+[gd_scene load_steps=5 format=3 uid="uid://bnu33fspyr4kb"]
 
 [ext_resource type="Script" uid="uid://bpv80mqlwfkai" path="res://entity/player/player.gd" id="1_o3s7f"]
 [ext_resource type="Texture2D" uid="uid://cfjomswdyv7vn" path="res://entity/player/player.png" id="1_sntwv"]
+[ext_resource type="PackedScene" uid="uid://bpb2ho2elsry4" path="res://interaction_components/interacting_component.tscn" id="3_5o33p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sntwv"]
 radius = 7.0
@@ -15,3 +16,5 @@ texture = ExtResource("1_sntwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sntwv")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_5o33p")]

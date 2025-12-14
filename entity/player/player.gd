@@ -1,11 +1,13 @@
+class_name Player
 extends CharacterBody2D
 
 @export var max_speed = 9000
 @export var player_id = 1
 
-
 var speed = max_speed
 var device_id = 1
+
+var bag: Bag = Bag.new()
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
