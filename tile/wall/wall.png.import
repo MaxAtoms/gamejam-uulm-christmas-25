@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b208mh8uir5as"
-path="res://.godot/imported/tuxearth.png-b0028bdbb0b00ba33d8294958ac1098d.ctex"
+uid="uid://bj0580r3hrokl"
+path="res://.godot/imported/wall.png-08164d9a20ed496aea6cd180436d5196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile/panguin/tuxearth.png"
-dest_files=["res://.godot/imported/tuxearth.png-b0028bdbb0b00ba33d8294958ac1098d.ctex"]
+source_file="res://tile/wall/wall.png"
+dest_files=["res://.godot/imported/wall.png-08164d9a20ed496aea6cd180436d5196.ctex"]
 
 [params]
 
