@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://t8cefufwgh8b"]
 
-[ext_resource type="Script" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
+[ext_resource type="Script" uid="uid://tjufnrfv5plr" path="res://tile/damagable/target/source/quarry.gd" id="1_5yxaw"]
 [ext_resource type="Texture2D" uid="uid://dt26oxm0cmlrl" path="res://tile/damagable/target/source/quarry2.png" id="2_5yxaw"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="2_7j31m"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_tehcs"]
@@ -50,9 +50,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -15.0
-offset_top = -20.0
+offset_top = 20.0
 offset_right = 15.0
-offset_bottom = -18.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_5yxaw")

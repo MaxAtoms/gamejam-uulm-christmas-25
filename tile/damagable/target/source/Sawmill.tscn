@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6hajxoo4sfm7"]
 
-[ext_resource type="Script" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
+[ext_resource type="Script" uid="uid://d1olsysdaopjo" path="res://tile/damagable/target/source/sawmill.gd" id="1_onx03"]
 [ext_resource type="Texture2D" uid="uid://b0w8oqva2gk3q" path="res://tile/damagable/target/source/sawmill.png" id="2_bjecy"]
 [ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="2_lfu5r"]
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="3_lfu5r"]
@@ -14,7 +14,7 @@ radius = 24.020824
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onx03"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjecy"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0, 0.70980394, 0.69803923, 1)
 
 [node name="Sawmill" type="StaticBody2D" groups=["target"]]
 script = ExtResource("1_onx03")
@@ -45,9 +45,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -15.0
-offset_top = -20.0
+offset_top = 20.0
 offset_right = 15.0
-offset_bottom = -18.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_onx03")
