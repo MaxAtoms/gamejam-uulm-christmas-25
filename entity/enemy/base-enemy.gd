@@ -5,6 +5,14 @@ extends CharacterBody2D
 @export var damage = 1
 @export var target_randomness = 0.2
 
+enum Direction {
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+}
+
+var direction = Direction.DOWN
 var target: Node = null
 
 func _ready() -> void:
@@ -16,6 +24,8 @@ func _process(delta: float) -> void:
 	if target != null:
 		velocity = target.global_position - global_position
 		velocity = velocity.normalized() * speed * delta
+		
+		walkanimation()
 		move_and_slide()
 
 func find_target():
@@ -27,3 +37,6 @@ func find_target():
 		if distanceSquared <= minDistanceSquared && randf() >= target_randomness:
 			minDistanceSquared = distanceSquared
 			target = targetNode
+			
+func walkanimation():
+	pass
