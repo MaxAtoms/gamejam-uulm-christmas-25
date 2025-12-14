@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("No buildable item in bag")
 			return
-		instance.global_position = global_position.snapped(Vector2.ONE * 32)
+		instance.global_position = global_position
 		main.add_child(instance)
 		get_parent().take_item()
 		pass

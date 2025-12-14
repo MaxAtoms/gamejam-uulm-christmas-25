@@ -9,7 +9,7 @@ outline_color = Color(0, 0, 0, 0.49803922)
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Turm: 6 Holz
-Kanone: 4 Eisen
-Mauer: 2 Stein"
+text = "Tower: 6 Wood
+Canon: 4 Iron
+Wall: 2 Stone"
 label_settings = SubResource("LabelSettings_fg454")
