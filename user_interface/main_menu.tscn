@@ -64,7 +64,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_xqlja")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 text = "MISSED STEAKS"
 horizontal_alignment = 1
 

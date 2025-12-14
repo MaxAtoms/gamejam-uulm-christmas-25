@@ -21,8 +21,8 @@ score="*res://score.gd"
 
 [display]
 
-window/size/viewport_width=2208
-window/size/viewport_height=1186
+window/size/viewport_width=1824
+window/size/viewport_height=994
 window/size/mode=2
 window/stretch/mode="viewport"
 
