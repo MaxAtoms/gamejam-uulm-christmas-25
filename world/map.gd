@@ -72,8 +72,13 @@ func refresh_inventory_display(device_id: int, amount: int, item_type: int):
 	
 	for child in get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").get_children():
 			child.queue_free()
+			
+	inventory_values[device_id] = Vector2i(item_type, amount)
 	
-	for player_id in inventory_values.keys():
+	var sorted_keys = inventory_values.keys()
+	sorted_keys.sort()
+	
+	for player_id in sorted_keys:
 		print("Player " + str(player_id))
 		
 		var icon_path = "res://tile/icon/wood.png"	

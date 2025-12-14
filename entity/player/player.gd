@@ -72,5 +72,5 @@ func receive_items(items: Array[Item]):
 		print("The bag is full")
 	else:
 		print("Added ", items.size(), " items to the bag")
-		
+	
 	map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
