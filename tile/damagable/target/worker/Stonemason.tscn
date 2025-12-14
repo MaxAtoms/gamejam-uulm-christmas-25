@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://274jjcdpf53a" path="res://interaction_components/interactable.tscn" id="3_qu8kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ske2f"]
-size = Vector2(19, 28)
+size = Vector2(32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rtdv"]
 radius = 26.019224
@@ -23,16 +23,15 @@ script = ExtResource("1_8tnqj")
 texture = ExtResource("1_60eak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_ske2f")
 
 [node name="Damagable" parent="." instance=ExtResource("2_8tnqj")]
 max_health = 200.0
 
 [node name="Interactable" parent="." instance=ExtResource("3_qu8kn")]
+interact_name = "Drop Stone/Craft Wall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-visible = false
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_2rtdv")
 

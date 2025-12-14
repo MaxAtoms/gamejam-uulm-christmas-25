@@ -38,6 +38,12 @@ func _on_interact(interacting_component: InteractingComponent):
 			interactable.is_interactable = true
 			return
 		
+		# If the player holds items that cannot be placed down, we will not allow to craft
+		# Crafting can only be done if the bag is emtpy
+		if interacting_component.get_item_type() != "":
+			interactable.is_interactable = true
+			return
+		
 		# Player wants to craft an item
 		if ressources.size() < consumed_ressources_per_request:
 			# There are not enough ressources to craft anything
