@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var interactable: Area2D = $Interactable
-@onready var timer: Timer = $Timer
+@onready var mining_timer: Timer = $Timer
 
 const PRODUCT: String = "iron"
 var produced_items_per_request = 1
@@ -12,32 +12,32 @@ var interacting_component: InteractingComponent = null
 func _ready() -> void:
 	interactable.interact = _on_interact
 	interactable.cancel_interaction = _on_cancel_interaction
-	timer.timeout.connect(func(): print("Hallo"))
+	mining_timer.wait_time = cooldown_in_sec
+	mining_timer.timeout.connect(func(): _on_mining_finished())
 
-	
-func _on_interact(interacting_component: InteractingComponent, _items: Array[Item]) -> Array[Item]:
+func _on_interact(interacting_component: InteractingComponent, _items: Array[Item]):
 	if interactable.is_interactable:
 		interactable.is_interactable = false
 		self.interacting_component = interacting_component
-		await get_tree().create_timer(cooldown_in_sec).timeout
-		print("the mine provided ", produced_items_per_request," iron")
+		mining_timer.start()
+
+func _on_mining_finished():
+	mining_timer.stop()
+	if interacting_component != null:
+		print("The mine provided ", produced_items_per_request," iron for interacting component ", interacting_component.id, ".")
 		var mined_items: Array[Item] = []
-		if self.interacting_component != null and interacting_component.id == self.interacting_component.id:
-			for i in range(produced_items_per_request):
-				mined_items.append(Iron.new())
-		self.interacting_component = null
-		interactable.is_interactable = true
-		return mined_items
-	return []
+		for i in range(produced_items_per_request):
+			mined_items.append(Iron.new())
+		interacting_component.receive_items(mined_items)
+	interacting_component = null
+	interactable.is_interactable = true
 
 func _on_cancel_interaction(interacting_component: InteractingComponent):
-	self.interacting_component = null
 	print("Cancle for ", interacting_component.id)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if self.interacting_component != null && interacting_component.id == self.interacting_component.id:
+		mining_timer.stop()
+		self.interacting_component = null
+		interactable.is_interactable = true
 
 func _on_interactable_area_exited(interacting_component: InteractingComponent) -> void:
 	_on_cancel_interaction(interacting_component)

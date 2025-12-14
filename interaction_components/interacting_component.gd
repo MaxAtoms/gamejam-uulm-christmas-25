@@ -12,10 +12,12 @@ func _input(event: InputEvent) -> void:
 			can_interact = false
 			interact_label.hide()
 			
-			var received_elements: Array[Item] = await current_interactions[0].interact.call(self, [] as Array[Item])
-			get_parent().receive_items(received_elements)
+			await current_interactions[0].interact.call(self, [] as Array[Item])
 			
 			can_interact = true
+
+func receive_items(items: Array[Item]):
+	get_parent().receive_items(items)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

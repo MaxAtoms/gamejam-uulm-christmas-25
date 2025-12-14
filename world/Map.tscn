@@ -1117,7 +1117,15 @@ anchor_mode = 0
 limit_right = 20000000
 
 [node name="Spawner" parent="." instance=ExtResource("3_xawsu")]
-position = Vector2(500, 500)
+position = Vector2(50, 97)
+
+[node name="Spawner2" parent="." instance=ExtResource("3_xawsu")]
+position = Vector2(1249, 1080)
+retardation = 2
+
+[node name="Spawner3" parent="." instance=ExtResource("3_xawsu")]
+position = Vector2(1925, 223)
+retardation = 3
 
 [node name="Mine" parent="." instance=ExtResource("6_4fpfk")]
 position = Vector2(1388, 576)
@@ -1189,7 +1197,10 @@ script = SubResource("GDScript_gpvnj")
 position = Vector2(269, 484)
 
 [node name="Canon" parent="." instance=ExtResource("17_7a3st")]
-position = Vector2(633, 454)
+position = Vector2(858, 877)
+
+[node name="Canon2" parent="." instance=ExtResource("17_7a3st")]
+position = Vector2(1388, 531)
 
 [node name="Rubble" parent="." instance=ExtResource("18_gpvnj")]
 position = Vector2(495, 585)
