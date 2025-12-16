@@ -27,6 +27,7 @@ but please be considerate in your phrasing and refrain from assigning blame!
 
 ## What would we do differently next time?
 
+- Spend a few hours before the start to get familiar with Godot again.
 - Learn to use tile maps properly in Godot
 - Learn to structure projects in Godot
 - A library of common functionalities (player controls, score board, etc.) or templates would help with rapid prototyping
