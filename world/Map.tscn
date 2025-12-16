@@ -42,7 +42,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfat1"]
@@ -1114,18 +1113,18 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="TitleBar" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer2"]
+[node name="Control" type="Control" parent="TitleBar"]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 
-[node name="Tutorial" parent="CanvasLayer2/Control" instance=ExtResource("16_knb4e")]
+[node name="Tutorial" parent="TitleBar/Control" instance=ExtResource("16_knb4e")]
 position = Vector2(10, 60)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Control"]
+[node name="ColorRect" type="ColorRect" parent="TitleBar/Control"]
 z_index = 150
 layout_mode = 1
 anchors_preset = 10
@@ -1134,7 +1133,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.8392157)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="TitleBar/Control"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -1143,31 +1142,31 @@ grow_horizontal = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleBar/Control/MarginContainer"]
 z_index = 160
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="TitleBar/Control/MarginContainer/HBoxContainer"]
 z_index = 200
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_xmor4")
 theme_override_font_sizes/font_size = 12
 text = "Current Time:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
+[node name="Inventory" type="HBoxContainer" parent="TitleBar/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer2/Control/MarginContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="TitleBar/Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_0wrhf")
 theme_override_font_sizes/font_size = 12
-text = "End Game
+text = "Main Menu
 "
 script = SubResource("GDScript_gpvnj")
 
-[node name="ObjectLayer" type="TileMapLayer" parent="."]
+[node name="Stones" type="TileMapLayer" parent="."]
 z_index = 10
 tile_map_data = PackedByteArray("AAAFACMABAACAAEAAAALACQABAACAAEAAAAMAB8ABAACAAEAAAAHAB4ABAACAAEAAAAIACEABAACAAEAAAAKACIABAACAAEAAAAKAB4ABAACAAEAAAAFACAABAACAAEAAAAFAB0ABAACAAEAAAAJABsABAACAAEAAAALABwABAACAAEAAAAOABsABAACAAEAAAAMABkABAACAAEAAAAUAB4ABAACAAEAAAASACIABAACAAEAAAAWACEABAACAAEAAAAWACIABAACAAEAAAAWACUABAACAAEAAAATACUABAACAAEAAAASACcABAACAAEAAAAVACcABAACAAEAAAAOACcABAACAAEAAAAMACYABAACAAEAAAAIACYABAACAAEAAAAHACQABAACAAEAAAAPABkABAACAAEAAAAXABcABAACAAEAAAAMABYABAACAAEAAAAOABYABAACAAEAAAAOABgABAACAAEAAAAFABgABAACAAEAAAACABkABAACAAEAAAAEABsABAACAAEAAAAUACAABAACAAEAAAAQACgABAACAAEAAAAZACUABAACAAEAAAAaACIABAACAAEAAAAXAB4ABAACAAEAAAAZAB0ABAACAAEAAAAVABsABAACAAEAAAASABcABAACAAEAAAAJABgABAACAAEAAAAMACgABAACAAMAAAAFAB4ABAACAAMAAAATAB8ABAADAAMAAAAKABYABAADAAMAAAAYACUABAAEAAMAAAAbAB8ABAAEAAMAAAAQABsABAAEAAMAAAAYACMABAAIAAEAAAAHABkABAAIAAEAAAAZABoABAACAAEAAAATABMABAACAAEAAAAdABUABAACAAEAAAAYABMABAACAAEAAAAgAB4ABAACAAEAAAAfACIABAACAAEAAAAcABsABAACAAEAAAAiABoABAACAAEAAAAcACcABAACAAEAAAAVABcABAAMAAEAAAAdABgABAAMAAEAAAAEACcABAAMAAEAAAAeACUABAADAAMAAAAYABkABAADAAMAAAACACYABAAEAAMAAAASABsABAABAAEAAAARABsABAAAAAEAAAASABoABAABAAAAAAARABoABAAAAAAAAAAPABoABAAJAAEAAAAZAAIABAAJAAAAAAAhAAYABAAJAAAAAAAqAAIABAAJAAAAAAAZAAUABAAJAAAAAAAdAAkABAAJAAAAAAAjAAgABAAJAAEAAAAmAAQABAAJAAEAAAAbAAYABAAJAAEAAAAnAAgABAAJAAEAAAAtAAUABAAJAAEAAAAXAAoABAACAAMAAAAeAAQABAACAAMAAAAlAAYABAACAAMAAAAsAAkABAACAAMAAAAlAAkABAACAAMAAAAcAAwABAADAAMAAAAiAAoABAADAAMAAAAqAAUABAADAAMAAAAuAAIABAADAAMAAAAWAAQABAAEAAMAAAAfAAkABAAEAAMAAAAjAAQABAAEAAMAAAAnAAIABAAKAAEAAAAoAAIABAALAAEAAAAsAAcABAALAAEAAAAsAAYABAALAAAAAAArAAYABAAKAAAAAAArAAcABAAKAAEAAAA2AAQAAwACAA4AAAAwAAcAAwACAA4AAAA8ACEACgAHAAIAAAAvAA0ABAAIAAEAAAA3AAgABAAIAAEAAAA5AA8ABAAIAAEAAAAhACQABAACAAEAAAAeABkABAACAAEAAAAEABYABAACAAEAAAAUAAEABAAEAAMAAAAWAAEABAACAAMAAAAZAAAABAAKAAAAAAAZAAEABAAKAAEAAAAaAAAABAALAAAAAAAaAAEABAALAAEAAAAdAAEABAAJAAEAAAAgAAAABAAEAAMAAAAnAAEABAAKAAAAAAAoAAAABAAEAAMAAAAoAAEABAALAAAAAAAyAAEABAADAAMAAAA=")
 tile_set = SubResource("TileSet_cgnyc")
@@ -1232,4 +1231,4 @@ position = Vector2(1133, 599)
 [node name="Craftsman" parent="." instance=ExtResource("22_knb4e")]
 position = Vector2(1107, 727)
 
-[connection signal="button_up" from="CanvasLayer2/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]
+[connection signal="button_up" from="TitleBar/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]

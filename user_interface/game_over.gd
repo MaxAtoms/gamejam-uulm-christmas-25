@@ -10,6 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _input(event: InputEvent):
+	if event.is_action("escape"):
+		on_quit_pressed()
+	if event.is_action("play"):
+		on_menu_pressed()
+
 func on_quit_pressed():
 	get_tree().quit()
 

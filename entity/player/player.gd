@@ -27,7 +27,7 @@ var bag: Bag = Bag.new()
 @onready var map = get_node("/root/Map")
 
 func _ready():
-	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
+	pass
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("drop_items_%s" % device_id):
 		bag.take_items(bag.size)
-		map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
 
 func show_info_on_label(info: String):
 	info_label.text = info
@@ -97,7 +96,6 @@ func get_item_type() -> String:
 
 func take_all_items() -> Array[Item]:
 	var items = bag.take_items(bag.size)
-	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
 	return items
 
 func receive_items(items: Array[Item]):
@@ -112,15 +110,9 @@ func receive_items(items: Array[Item]):
 	else:
 		show_info_on_label("+ " + str(items.size()) + " " + items[0].get_type())
 
-	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
-
-
-	#map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
-
 
 func get_bag_type():
 	return bag.get_item_type()
 
 func take_item():
 	bag.take_items(1)
-	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())

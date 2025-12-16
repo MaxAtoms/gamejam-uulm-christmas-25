@@ -19,6 +19,11 @@ func get_item_type() -> String:
 		return items[0].get_type()
 	return ""
 
+func get_item_type_class() -> Item:
+	if items.size() > 0:
+		return items[0].duplicate()
+	return Item.new()
+
 func get_item_count() -> int:
 	return items.size()
 

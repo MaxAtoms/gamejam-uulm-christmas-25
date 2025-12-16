@@ -564,7 +564,7 @@ script = ExtResource("1_o3s7f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_hy4hk")
-animation = &"go_right3"
+animation = &"go_right2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)

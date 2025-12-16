@@ -13,20 +13,21 @@ var phase = Phase.DAY
 @export var night_color := Color(0.05, 0.05, 0.4, 0.5)
 var curve_strength := 2.0 # higher = more square
 @onready var night_color_rect = $CanvasLayer/ColorRect
-@onready var time_label = $CanvasLayer2/Control/MarginContainer/HBoxContainer/Label
+@onready var time_label = $TitleBar/Control/MarginContainer/HBoxContainer/Label
+@onready var inventory_container: HBoxContainer = $TitleBar/Control/MarginContainer/HBoxContainer/Inventory
 
 
 var time := day_length / 2
 var is_night := false
 
 @export var max_player = 4
-var players = {}
+var players: Dictionary[int, Player] = {}
 
 #Dict of device id -> [item type, item amount]
 var inventory_values: Dictionary[int, Array] = {}
 
 func _process(delta):
-	
+	update_inventory_display()
 	if get_tree().get_nodes_in_group("target").size() < 1:
 		get_tree().change_scene_to_file("res://user_interface/game_over.tscn")
 		
@@ -71,6 +72,9 @@ func _process(delta):
 	score.score = round_counter * 100
 	
 func _input(event: InputEvent) -> void:
+	if event.is_action("escape"):
+		goto_main_menu()
+	
 	for i in range(0,3):
 		if (event.is_action("move_down_%s" % i) or event.is_action("move_up_%s" % i) or event.is_action("move_left_%s" % i) or event.is_action("move_right_%s" % i)) and not players.has(i):
 			print("Player ", i, " connected.")
@@ -84,58 +88,52 @@ func _input(event: InputEvent) -> void:
 			add_child(player)
 
 func goto_main_menu():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://user_interface/main_menu.tscn")
 
-func refresh_inventory_display(device_id: int, amount: int, item_type: String, bag_size: int):
+func update_inventory_display():
+	for child in inventory_container.get_children():
+		child.queue_free()
 	
-	for child in get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").get_children():
-			child.queue_free()
-			
-	inventory_values[device_id] = [item_type, amount]
-	
-	var sorted_keys = inventory_values.keys()
-	sorted_keys.sort()
-	
-	var font = load("res://tile/fonts/Righteous.ttf")  # FontFile resource
-	
-	for player_id in sorted_keys:
-		print("Player " + str(player_id))
+	for index in players:
+		var player: Player = players.get(index)
 		
-		if inventory_values.get(player_id)[1] == 0:
+		var item_type = player.get_bag_type()
+		if item_type == Item.get_type():
 			continue
 		
-		var icon_path = "res://tile/icon/wood.png"	
-		if inventory_values.get(player_id)[0] == "iron":
-			icon_path = "res://tile/icon/iron.png"
-		elif inventory_values.get(player_id)[0] == "stone":
-			icon_path = "res://tile/icon/stone.png"
-		elif inventory_values.get(player_id)[0] == "archer_tower":
-			icon_path = "res://tile/damagable/buildable/defence/ArcherTower2.png"
-		elif inventory_values.get(player_id)[0] == "canon":
-			icon_path = "res://tile/damagable/buildable/defence/canon.png"
-		elif inventory_values.get(player_id)[0] == "wall":
-			icon_path = "res://tile/damagable/buildable/defence/wall.png"
+		var font = load("res://tile/fonts/Righteous.ttf")
 		
-		var name_label = Label.new()
-		name_label.text = "Player " + str(player_id) + ": "	
-		name_label.add_theme_font_override("font", font)
-		name_label.add_theme_font_size_override("font_size", 10)
-		get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").add_child(name_label)
+		var player_icon = TextureRect.new()
+		match index:
+			0: player_icon.texture = load("res://tile/penguin/default/front1.png")
+			1: player_icon.texture = load("res://tile/penguin/air/air_front1.png")
+			2: player_icon.texture = load("res://tile/penguin/fire/tuxfire_front1.png")
+			3: player_icon.texture = load("res://tile/penguin/ice/tuxice_front1.png")
+		player_icon.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
+		player_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		player_icon.custom_minimum_size = Vector2(32, 32)
+		inventory_container.add_child(player_icon)
 		
-		var icon = TextureRect.new()
-		icon.texture = load(icon_path)  # Load your icon texture
-		icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE     # Preserve original size
-		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		icon.custom_minimum_size = Vector2(32, 32)           # Optional: fixed icon size
-		get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").add_child(icon)
+		var separator_label = Label.new()
+		separator_label.text = ": "	
+		separator_label.add_theme_font_override("font", font)
+		separator_label.add_theme_font_size_override("font_size", 10)
+		inventory_container.add_child(separator_label)
+		
+		var item_icon = TextureRect.new()
+		item_icon.texture = load(player.bag.get_item_type_class().get_sprite_path())  # Load your icon texture
+		item_icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE     # Preserve original size
+		item_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		item_icon.custom_minimum_size = Vector2(32, 32)           # Optional: fixed icon size
+		inventory_container.add_child(item_icon)
 		
 		var amount_label = Label.new()
-		amount_label.text = str(inventory_values.get(player_id)[1]) + " / " + str(bag_size)
+		amount_label.text = str(player.bag.get_item_count()) + " / " + str(player.bag.get_size())
 		amount_label.add_theme_font_override("font", font)
 		amount_label.add_theme_font_size_override("font_size", 10)
-		get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").add_child(amount_label)
+		inventory_container.add_child(amount_label)
 		
 		
 		var fixed_spacer = Control.new()
 		fixed_spacer.custom_minimum_size = Vector2(16, 0)
-		get_node("CanvasLayer2/Control/MarginContainer/HBoxContainer/HBoxContainer").add_child(fixed_spacer)
+		inventory_container.add_child(fixed_spacer)
