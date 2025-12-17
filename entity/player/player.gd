@@ -22,12 +22,18 @@ var add_item_label_cooldown = 0.0
 
 @onready var info_label = get_node("AddItemLabel")
 
+#level and class
+@onready var level_comp := $LevelComponent
+@onready var class_comp := $BaseClass
+
 var bag: Bag = Bag.new()
 
 @onready var map = get_node("/root/Map")
 
 func _ready():
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
+	#level and class
+	level_comp.level_changed.connect(class_comp.on_level_changed)
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
@@ -112,9 +118,6 @@ func receive_items(items: Array[Item]):
 		show_info_on_label("+ " + str(items.size()) + " " + items[0].get_type())
 
 	map.refresh_inventory_display(device_id, bag.get_item_count(), bag.get_item_type(), bag.get_size())
-
-
-	#map.refresh_inventory_display(device_id, bag.get_size(), bag.get_item_type())
 
 
 func get_bag_type():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bnu33fspyr4kb"]
+[gd_scene load_steps=84 format=3 uid="uid://bnu33fspyr4kb"]
 
 [ext_resource type="Script" uid="uid://bpv80mqlwfkai" path="res://entity/player/player.gd" id="1_o3s7f"]
 [ext_resource type="Texture2D" uid="uid://ldt0gyrau0e5" path="res://tile/penguin/default/front1.png" id="2_dx687"]
@@ -56,6 +56,8 @@
 [ext_resource type="Texture2D" uid="uid://7np6iyt8l4os" path="res://tile/penguin/tuxice.png" id="53_mrwja"]
 [ext_resource type="FontFile" uid="uid://cgl26ycgmnox5" path="res://tile/fonts/Righteous.ttf" id="55_mrwja"]
 [ext_resource type="PackedScene" uid="uid://ddnikeje3rpmx" path="res://tile/damagable/buildable/BuildableComponent.tscn" id="56_qcfv7"]
+[ext_resource type="PackedScene" uid="uid://nag5nic0uge6" path="res://entity/player/Classes/BaseClassComponent.tscn" id="57_xfda3"]
+[ext_resource type="PackedScene" uid="uid://b8hekmbrronao" path="res://entity/player/Classes/LevelComponent.tscn" id="58_qxyfi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5o33p"]
 atlas = ExtResource("2_o3s7f")
@@ -591,3 +593,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuildableComponent" parent="." instance=ExtResource("56_qcfv7")]
+
+[node name="BaseClass" parent="." instance=ExtResource("57_xfda3")]
+
+[node name="LevelComponent" parent="." instance=ExtResource("58_qxyfi")]
