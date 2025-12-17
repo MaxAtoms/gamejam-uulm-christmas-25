@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://doviwjltjchsx"]
+
+[ext_resource type="Texture2D" uid="uid://dsnhrlbv0iawk" path="res://tile/idea/magicTower.png" id="1_6hyfj"]
+[ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="2_7e1rd"]
+[ext_resource type="PackedScene" uid="uid://bmx0gxmhj10yp" path="res://tile/damagable/buildable/defence/projectile/lightning.tscn" id="3_7e1rd"]
+[ext_resource type="PackedScene" uid="uid://bkro40s70nwk6" path="res://tile/damagable/Damagable.tscn" id="3_ktvys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1i3k"]
+size = Vector2(32, 32)
+
+[node name="MagicTower" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6hyfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_m1i3k")
+
+[node name="ProjectileShooter" parent="." instance=ExtResource("2_7e1rd")]
+projectile_damage = 5
+projectile_speed = 600
+target_range = 400
+projectile = ExtResource("3_7e1rd")
+
+[node name="Damagable" parent="." instance=ExtResource("3_ktvys")]
+bar_offset = 15.0
+auto_hide = false
