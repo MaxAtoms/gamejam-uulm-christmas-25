@@ -34,6 +34,7 @@ func find_target():
 		if distanceSquared <= minDistanceSquared && distanceSquared <= target_range * target_range:
 			minDistanceSquared = distanceSquared
 			target = targetNode
+			
 
 func _on_cooldown_timeout() -> void:
 	shoot()

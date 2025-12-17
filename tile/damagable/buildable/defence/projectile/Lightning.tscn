@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://br40g6qcnfesc"]
+
+[ext_resource type="Script" uid="uid://bblyowc0dscno" path="res://tile/damagable/buildable/defence/projectile/arrow.gd" id="1_b4xol"]
+[ext_resource type="PackedScene" uid="uid://bqmemywwbdxse" path="res://tile/damagable/buildable/defence/ProjectileShooter.tscn" id="2_5w80w"]
+[ext_resource type="Texture2D" uid="uid://bdomc0poxubrj" path="res://tile/damagable/buildable/defence/lightning.png" id="2_pivh8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spe1p"]
+radius = 4.0
+height = 26.0
+
+[node name="Lightning" type="Area2D"]
+z_index = 999
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_b4xol")
+
+[node name="ProjectileShooter" parent="." instance=ExtResource("2_5w80w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_spe1p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-4, -16, 8, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pivh8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

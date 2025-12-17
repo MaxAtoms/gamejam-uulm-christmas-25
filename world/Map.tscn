@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b1p5bf3yvjm4s"]
+[gd_scene load_steps=40 format=4 uid="uid://b1p5bf3yvjm4s"]
 
 [ext_resource type="Texture2D" uid="uid://ckjrmg6slcs84" path="res://tile/environment/decoration/dirt.png" id="1_daoqi"]
 [ext_resource type="Script" uid="uid://40go1natg6e3" path="res://world/map.gd" id="1_xawsu"]
@@ -43,6 +43,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
+[ext_resource type="PackedScene" uid="uid://doviwjltjchsx" path="res://tile/damagable/buildable/defence/MagicTower.tscn" id="24_elr1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfat1"]
 texture = ExtResource("1_daoqi")
@@ -1231,4 +1232,7 @@ position = Vector2(1133, 599)
 [node name="Craftsman" parent="." instance=ExtResource("22_knb4e")]
 position = Vector2(1107, 727)
 
-[connection signal="button_up" from="TitleBar/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]
+[node name="MagicTower" parent="." instance=ExtResource("24_elr1o")]
+position = Vector2(596, 558)
+
+[connection signal="button_up" from="CanvasLayer2/Control/MarginContainer/HBoxContainer/Button" to="." method="goto_main_menu"]
