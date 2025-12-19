@@ -51,6 +51,8 @@ jobs:
         with:
           name: release-zip
           path: ./mine-defense-release
+      - name: LOGGING
+        run: ls -la
       - name: Upload to itch.io
         run: butler push ./mine-defense-release maxatoms/mine-defense:html5 --userversion ${{ github.ref_name }}
         env:
