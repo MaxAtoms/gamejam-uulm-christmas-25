@@ -17,10 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          path: 'mine-defense'
+          path: "mine-defense"
       - name: LOGGING
-        run: pwd
-        run: ls -la
+        run: pwd && ls -la
       - name: Create export
         run: ./Godot_v4.5.1-stable_linux.x86_64 --headless --export-release "CI-Web" ./mine-defense/project.godot
       - name: Zip export
