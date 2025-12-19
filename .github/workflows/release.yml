@@ -4,15 +4,21 @@ on:
   push:
     tags:
       - v*.*.*
+    branch:
+      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install dependencies
+        run: apt-get update && apt-get install -y wget zip unzip git tar
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: LS
+        uses: actions/checkout@v6
+        path: 'mine-defense'
+      - name: LOGGING
+        run: pwd
         run: ls -la
       - name: Create export
         run: ./Godot_v4.5.1-stable_linux.x86_64 --headless --export-release "CI-Web" ./mine-defense/project.godot
