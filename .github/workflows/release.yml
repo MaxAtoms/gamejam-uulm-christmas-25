@@ -9,7 +9,7 @@ on:
       - "main"
 
 jobs:
-  build:
+  export:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +23,17 @@ jobs:
         run: wget "https://downloads.godotengine.org/?version=4.5.1&flavor=stable&slug=linux.x86_64.zip&platform=linux.64" -O godot.zip
       - name: Unzip Godot
         run: unzip godot.zip
-      - name: Install Export Templates
-        run: ls /
-      - name: LOGGING
-        run: pwd && ls -la
-      - name: Create export
+      - name: Download Export Templates
+        run: wget "https://downloads.godotengine.org/?version=4.5.1&flavor=stable&slug=export_templates.tpz&platform=templates" -O templates.tpz
+      - name: Create Export Templates directory
+        run: mkdir -p /root/.local/share/godot/export_templates/4.5.1.stable
+      - name: Unzip Export Templates
+        run: unzip -j templates.tpz -d /root/.local/share/godot/export_templates/4.5.1.stable
+      - name: Create Export Folder
+        run: mkdir mine-defense-release
+      - name: Create Export
         run: ./Godot_v4.5.1-stable_linux.x86_64 --headless --export-release "CI-Web" ./mine-defense/project.godot
       - name: Zip export
         run: zip -r mine-defense-release.zip mine-defense-release
+      - name: LOGGING
+        run: pwd && ls -la
