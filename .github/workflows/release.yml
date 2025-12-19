@@ -34,7 +34,7 @@ jobs:
       - name: Create Export
         run: ./Godot_v4.5.1-stable_linux.x86_64 --headless --export-release "CI-Web" ./mine-defense/project.godot
       - name: Zip export
-        run: zip -r mine-defense-release.zip mine-defense-release
+        run: zip -rj mine-defense-release.zip mine-defense-release/*
       - name: LOGGING
         run: pwd && ls -la
       - uses: actions/upload-artifact@v6
