@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://boe0yl0jsabrv" path="res://tile/damagable/target/worker/Stonemason.tscn" id="21_r1207"]
 [ext_resource type="PackedScene" uid="uid://bqj1upprtfbmd" path="res://tile/damagable/target/worker/Blacksmith.tscn" id="22_bo7up"]
 [ext_resource type="PackedScene" uid="uid://bnpnnitk7x7n3" path="res://tile/damagable/target/worker/Craftsman.tscn" id="22_knb4e"]
+[ext_resource type="PackedScene" uid="uid://doviwjltjchsx" path="res://tile/damagable/buildable/defence/MagicTower.tscn" id="24_elr1o"]
 
 [sub_resource type="FontVariation" id="FontVariation_xmor4"]
 base_font = ExtResource("15_gpvnj")
@@ -43,7 +44,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
-[ext_resource type="PackedScene" uid="uid://doviwjltjchsx" path="res://tile/damagable/buildable/defence/MagicTower.tscn" id="24_elr1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfat1"]
 texture = ExtResource("1_daoqi")
