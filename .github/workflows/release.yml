@@ -26,9 +26,9 @@ jobs:
       - name: Download Export Templates
         run: wget "https://downloads.godotengine.org/?version=4.5.1&flavor=stable&slug=export_templates.tpz&platform=templates" -O templates.tpz
       - name: Create Export Templates directory
-        run: sudo mkdir -p /root/.local/share/godot/export_templates/4.5.1.stable
+        run: sudo mkdir -p /home/runner/.local/share/godot/export_templates/4.5.1.stable
       - name: Unzip Export Templates
-        run: sudo unzip -j templates.tpz -d /root/.local/share/godot/export_templates/4.5.1.stable
+        run: sudo unzip -j templates.tpz -d /home/runner/.local/share/godot/export_templates/4.5.1.stable
       - name: Create Export Folder
         run: mkdir mine-defense-release
       - name: Create Export
@@ -37,3 +37,22 @@ jobs:
         run: zip -r mine-defense-release.zip mine-defense-release
       - name: LOGGING
         run: pwd && ls -la
+      - uses: actions/upload-artifact@v6
+        with:
+          name: release-zip
+          path: ./mine-defense-release.zip
+
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup butler
+        uses: remarkablegames/setup-butler@v2
+      - uses: actions/download-artifact@v6
+        with:
+          name: release-zip
+          path: ./mine-defense-release.zip
+      - name: Upload to itch.io
+        run: butler push ./mine-defense-release.zip maxatoms/mine-defense --userversion ${{ github.ref_name }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
