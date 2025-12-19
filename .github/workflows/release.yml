@@ -16,7 +16,8 @@ jobs:
         run: apt-get update && apt-get install -y wget zip unzip git tar
       - name: Checkout
         uses: actions/checkout@v6
-        path: 'mine-defense'
+        with:
+          path: 'mine-defense'
       - name: LOGGING
         run: pwd
         run: ls -la
