@@ -19,6 +19,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: "mine-defense"
+      - name: Install Godot
+        run:
+          wget "https://downloads.godotengine.org/?version=4.5.1&flavor=stable&slug=linux.x86_64.zip&platform=linux.64" -O godot.zip \
+          && unzip godot.zip
+      - name: Install Export Templates
+        run: ls /
       - name: LOGGING
         run: pwd && ls -la
       - name: Create export
